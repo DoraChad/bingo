@@ -1,5 +1,7 @@
+let socket;
+
 function socketconnect(socketurl) {
-    var socket = io();
+    socket = io();
     socket.connect(socketurl); 
 
     sendMessageToServer("info", "username")
