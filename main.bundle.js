@@ -12,7 +12,7 @@ function sendMessageToServer(msgtype, message) {
 };
 
 
-socketconnect('DoraChadSS.pythonanywhere.com');
+//socketconnect('DoraChadSS.pythonanywhere.com');
 
 (() => {
   var e = {
