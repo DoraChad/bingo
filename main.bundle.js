@@ -42342,7 +42342,7 @@ function sendMessageToServer(msgtype, message) {
             YC(this, MC, "f").appendChild(E),
             YC(this, BC, "f").push(E);
 
-          //DORACHAD
+          //DORACHAD   ---   MAIN HOME SCREEN LOADING BUTTON
 
 
           const M = document.createElement("button");
@@ -42353,8 +42353,8 @@ function sendMessageToServer(msgtype, message) {
                 //when clicked
 
                 YC(this, kC, "m", HC).call(this),         //clears screen (ui elements)
-                YC(this, kC, "m", GC).call(this);//,          //gets rid of logo (and probably other things as well)
-                //YC(this, RC, "f").show();               //shows play ui (track select, import, ect...)
+                YC(this, kC, "m", GC).call(this),          //gets rid of logo (and probably other things as well)
+                YC(this, RC, "f").show();               //shows play ui (track select, import, ect...)
             });
           const T = document.createElement("p");
           (T.textContent = t.get("Play")),
