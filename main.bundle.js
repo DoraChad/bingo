@@ -41350,8 +41350,6 @@ function sendMessageToServer(msgtype, message) {
             )),
             OA(this, NA, "f").appendChild(v);
 
-          //DORACHAD
-
 
           const w = document.createElement("p");
           OA(this, NA, "f").appendChild(w);
@@ -41362,21 +41360,21 @@ function sendMessageToServer(msgtype, message) {
             y.addEventListener("click", () => {
               var e, t;
               a.playUIClick();
-              //const n = r.getRecord(i.profileSlot, s);
-              //OA(this, LA, "f").call(this, {
-              //  recording:
-              //    null !== (e = null == n ? void 0 : n.recording) &&
-              //    void 0 !== e
-              //      ? e
-              //      : null,
-              //  carColors: null,
-              //  name: null,
-              //  time:
-              //    null !== (t = null == n ? void 0 : n.time) && void 0 !== t
-              //      ? t
-              //      : null,
-              //  isSelf: !0,
-              //});
+              const n = r.getRecord(i.profileSlot, s);
+              OA(this, LA, "f").call(this, {
+                recording:
+                  null !== (e = null == n ? void 0 : n.recording) &&
+                  void 0 !== e
+                    ? e
+                    : null,
+                carColors: null,
+                name: null,
+                time:
+                  null !== (t = null == n ? void 0 : n.time) && void 0 !== t
+                    ? t
+                    : null,
+                isSelf: !0,
+              });
             }),
             OA(this, NA, "f").appendChild(y),
             window.addEventListener(
@@ -42343,14 +42341,20 @@ function sendMessageToServer(msgtype, message) {
             E.appendChild(S),
             YC(this, MC, "f").appendChild(E),
             YC(this, BC, "f").push(E);
+
+          //DORACHAD
+
+
           const M = document.createElement("button");
           (M.className = "hidden"),
             (M.innerHTML = '<img src="images/play.svg">'),
             M.addEventListener("click", () => {
-              n.playUIClick(),
-                YC(this, kC, "m", HC).call(this),
-                YC(this, kC, "m", GC).call(this),
-                YC(this, RC, "f").show();
+              n.playUIClick()//,
+                //when clicked
+
+                //YC(this, kC, "m", HC).call(this),
+                //YC(this, kC, "m", GC).call(this),
+                //YC(this, RC, "f").show();
             });
           const T = document.createElement("p");
           (T.textContent = t.get("Play")),
