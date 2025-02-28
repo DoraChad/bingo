@@ -11,7 +11,7 @@ function sendMessageToServer(msgtype, message) {
 };
 
 
-socketconnect('DoraChadSS.pythonanywhere.com');
+//socketconnect('DoraChadSS.pythonanywhere.com');
 
 (() => {
   var e = {
@@ -41349,6 +41349,10 @@ socketconnect('DoraChadSS.pythonanywhere.com');
                 : null
             )),
             OA(this, NA, "f").appendChild(v);
+
+          //DORACHAD
+
+
           const w = document.createElement("p");
           OA(this, NA, "f").appendChild(w);
           const y = document.createElement("button");
@@ -41358,21 +41362,21 @@ socketconnect('DoraChadSS.pythonanywhere.com');
             y.addEventListener("click", () => {
               var e, t;
               a.playUIClick();
-              const n = r.getRecord(i.profileSlot, s);
-              OA(this, LA, "f").call(this, {
-                recording:
-                  null !== (e = null == n ? void 0 : n.recording) &&
-                  void 0 !== e
-                    ? e
-                    : null,
-                carColors: null,
-                name: null,
-                time:
-                  null !== (t = null == n ? void 0 : n.time) && void 0 !== t
-                    ? t
-                    : null,
-                isSelf: !0,
-              });
+              //const n = r.getRecord(i.profileSlot, s);
+              //OA(this, LA, "f").call(this, {
+              //  recording:
+              //    null !== (e = null == n ? void 0 : n.recording) &&
+              //    void 0 !== e
+              //      ? e
+              //      : null,
+              //  carColors: null,
+              //  name: null,
+              //  time:
+              //    null !== (t = null == n ? void 0 : n.time) && void 0 !== t
+              //      ? t
+              //      : null,
+              //  isSelf: !0,
+              //});
             }),
             OA(this, NA, "f").appendChild(y),
             window.addEventListener(
