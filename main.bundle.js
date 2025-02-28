@@ -35445,7 +35445,7 @@ function sendMessageToServer(msgtype, message) {
         (Tx = new WeakMap()),
         (ux = new WeakSet()),
         (Ax = function (e, t, n, i, r = null) {
-          const a = document.createElement("div");
+          /* const a = document.createElement("div");
           (a.className = "track"), Rx(this, Ex, "f").appendChild(a);
           const o = document.createElement("button");
           (o.className = "button"),
@@ -35515,7 +35515,7 @@ function sendMessageToServer(msgtype, message) {
                     );
                 });
               });
-          }
+          } */
         });
       const Lx = class {
         constructor(e, t, n, i, r, a, o, s, l, c, h, d) {
@@ -42353,7 +42353,7 @@ function sendMessageToServer(msgtype, message) {
                 //when clicked
 
                 YC(this, kC, "m", HC).call(this),         //clears screen (ui elements)
-                YC(this, kC, "m", GC).call(this);//,
+                YC(this, kC, "m", GC).call(this);//,          //gets rid of logo (and probably other things as well)
                 //YC(this, RC, "f").show();               //shows play ui (track select, import, ect...)
             });
           const T = document.createElement("p");
