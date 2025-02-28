@@ -42349,12 +42349,12 @@ function sendMessageToServer(msgtype, message) {
           (M.className = "hidden"),
             (M.innerHTML = '<img src="images/play.svg">'),
             M.addEventListener("click", () => {
-              n.playUIClick()//,
+              n.playUIClick(),
                 //when clicked
 
-                //YC(this, kC, "m", HC).call(this),
-                //YC(this, kC, "m", GC).call(this),
-                //YC(this, RC, "f").show();
+                YC(this, kC, "m", HC).call(this),         //clears screen (ui elements)
+                YC(this, kC, "m", GC).call(this);//,
+                //YC(this, RC, "f").show();               //shows play ui (track select, import, ect...)
             });
           const T = document.createElement("p");
           (T.textContent = t.get("Play")),
