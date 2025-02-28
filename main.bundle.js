@@ -1,18 +1,17 @@
 let socket;
 
 function socketconnect(socketurl) {
-    socket = io();
-    socket.connect(socketurl); 
+    socket = io.connect(socketurl); 
 
     sendMessageToServer("info", "username")
 };
 
 function sendMessageToServer(msgtype, message) {
-    socket.send(msgtype, message);
+    socket.emit(msgtype, message);
 };
 
 
-//socketconnect('DoraChadSS.pythonanywhere.com');
+socketconnect('DoraChadSS.pythonanywhere.com');
 
 (() => {
   var e = {
