@@ -42476,7 +42476,7 @@ function sendMessageToServer(msgtype, message) {
                   n.playUIClick(), i();
                 });
 
-
+                dchdPopupBoxBottom.appendChild(dchdC);
 
 
 
