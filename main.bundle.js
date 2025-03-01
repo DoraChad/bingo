@@ -16,7 +16,7 @@ function sendMessageToServer(msgtype, message) {
 
 function toggleInnerVisibility(className, show, excludeSelector) {
   document.querySelectorAll(`.${className} > *:not(${excludeSelector})`).forEach(el => {
-      el.style.display = show ? "block" : "none";
+    el.style.visibility = show ? "visible" : "hidden";
   });
 }
 
