@@ -42425,7 +42425,7 @@ function deleteElementsByClass(className) {
                 const dchdP = document.createElement("h2");
                 
                 
-                dchdP.textContent = "Rooms";
+                dchdP.textContent = "Bingo Rooms";
                 dchdP.style.margin = "0";
                 dchdP.style.padding = "0";
                 dchdP.style.color = "white";
