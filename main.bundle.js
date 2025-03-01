@@ -42415,7 +42415,7 @@ function sendMessageToServer(msgtype, message) {
                 dchdP.style.fontSize = "38px";
                 dchdP.style.textAlign = "center";
                   
-                dchdPopupBox.appendChild(dchdP);
+                dchdPopupBoxTop.appendChild(dchdP);
 
 
                 //center part background
