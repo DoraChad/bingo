@@ -42368,12 +42368,16 @@ function sendMessageToServer(msgtype, message) {
 
 
 
+
+                //organizational div
                 const dchddiv = document.createElement("div");
                 dchddiv.className = "bingoLobby";
 
                 const dchdUIDiv = document.getElementById("ui");   //get the pre-existing UI div
                 dchdUIDiv.appendChild(dchddiv);      //append our CSS to the game =)
 
+
+                //box background
                 const dchdPopupDiv = document.createElement("div");
 
                 dchdPopupDiv.className = "popupBox";
@@ -42385,28 +42389,66 @@ function sendMessageToServer(msgtype, message) {
                 dchdPopupDiv.style.padding = "0";
                 dchdPopupDiv.style.width = "500px";
                 dchdPopupDiv.style.boxSizing = "border-box";
+                dchdPopupDiv.style.backgroundColor = "#212b58";
 
 
                 dchddiv.appendChild(dchdPopupDiv);  //append
 
-                const dchdPopupBox = document.createElement("div");
+                //top bar background
+                const dchdPopupBoxTop = document.createElement("div");
 
-                dchdPopupBox.style.margin = "0";
-                dchdPopupBox.style.backgroundColor = "#212b58";
+                dchdPopupBoxTop.style.margin = "0";
+                dchdPopupBoxTop.style.padding = "0";
+                dchdPopupBoxTop.style.backgroundColor = "#28346a";
 
-                dchdPopupDiv.appendChild(dchdPopupBox);
+                dchdPopupDiv.appendChild(dchdPopupBoxTop);
 
 
+                //top bar text
                 const dchdP = document.createElement("h2");
                 
-                dchdP.textContent = "test";
+                dchdP.textContent = "Rooms";
                 dchdP.style.margin = "0";
                 dchdP.style.padding = "0";
                 dchdP.style.color = "white";
+                dchdP.style.fontWeight = "normal";
                 dchdP.style.fontSize = "38px";
                 dchdP.style.textAlign = "center";
                   
                 dchdPopupBox.appendChild(dchdP);
+
+
+                //center part background
+                const dchdPopupBoxCenter = document.createElement("div");
+
+                dchdPopupBoxCenter.style.margin = "0";
+                dchdPopupBoxCenter.style.padding = "0";
+                dchdPopupBoxCenter.style.backgroundColor = "#28346a";
+
+                dchdPopupDiv.appendChild(dchdPopupBoxCenter);
+
+
+
+                //center part input (for room code)
+                const dchdPopupBoxInput = document.createElement("input");
+                dchdPopupBoxInput.type = "Room Code";
+                dchdPopupBoxInput.style.padding = "0";
+                dchdPopupBoxInput.style.fontsize = "16px";
+                dchdPopupBoxInput.style.margin = "29px";
+
+                dchdPopupBoxCenter.appendChild(dchdPopupBoxInput);
+
+                
+
+
+                //bottom part background
+                const dchdPopupBoxBottom = document.createElement("div");
+
+                dchdPopupBoxBottom.style.margin = "0";
+                dchdPopupBoxBottom.style.padding = "0";
+                dchdPopupBoxBottom.style.backgroundColor = "#28346a";
+
+                dchdPopupDiv.appendChild(dchdPopupBoxBottom);
                 
 
 
