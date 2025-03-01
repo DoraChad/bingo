@@ -29,10 +29,6 @@ function deleteElementsByClass(className) {
 };
 
 
-socket.on("inputReceived", (data) => {
-  console.log("Received from server:", data);
-  alert(`Server says: ${data}`);  // For example, show an alert with the input
-});
 
 
 
