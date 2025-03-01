@@ -14,16 +14,12 @@ function sendMessageToServer(msgtype, message) {
 //socketconnect('DoraChadSS.pythonanywhere.com');
 
 
-function toggleVisibility(className, show) {
-  document.querySelectorAll(`.${className}`).forEach(el => {
-      el.style.display = show ? "block" : "none"; // "block" makes it visible, "none" hides it
-  });
-};
 function toggleInnerVisibility(className, show) {
   document.querySelectorAll(`.${className} > *`).forEach(el => {
-      el.style.display = show ? "block" : "none"; // "block" shows, "none" hides
+      el.style.visibility = show ? "visible" : "hidden";
   });
 }
+
 function deleteElementsByClass(className) {
   document.querySelectorAll(`.${className}`).forEach(el => {
       el.remove(); // Removes each element from the DOM
@@ -42497,7 +42493,7 @@ function deleteElementsByClass(className) {
                 dchdC.addEventListener("click", () => {
                   n.playUIClick();
                   deleteElementsByClass("bingo-lobby-code")
-                  toggleVisibility("menu", true);
+                  toggleInnerVisibility("menu", true);
                 });
 
                 dchdPopupBoxBottom.appendChild(dchdC);
