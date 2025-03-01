@@ -42478,6 +42478,7 @@ function deleteElementsByClass(className) {
                 dchdPopupDiv.appendChild(dchdPopupBoxBottom);
                 
 
+                //back button
                 const dchdC = document.createElement("button");
                 dchdC.className = "button";
                 dchdC.innerHTML = '<img class="button-icon" src="images/back.svg"> ';
@@ -42498,6 +42499,7 @@ function deleteElementsByClass(className) {
                 dchdPopupBoxBottom.appendChild(dchdC);
 
 
+                //Confirm button
                 const dchdY = document.createElement("button");
                 dchdY.className = "button";
                 dchdY.innerHTML = '<img class="button-icon" src="images/apply.svg"> ';
@@ -42508,10 +42510,12 @@ function deleteElementsByClass(className) {
                 dchdY.style.border = "none";
                 dchdY.style.color = "white";
                 dchdY.style.fontSize = "32px";
+                dchdY.style.float = "right";
                 dchdY.append(document.createTextNode("Confirm"));
                 dchdY.addEventListener("click", () => {
                   n.playUIClick();
                   deleteElementsByClass("bingo-lobby-code")
+                  toggleInnerVisibility("menu", false);
                 });
 
                 dchdPopupBoxBottom.appendChild(dchdY);
