@@ -35461,7 +35461,6 @@ function deleteElementsByClass(className) {
         (Tx = new WeakMap()),
         (ux = new WeakSet()),
 
-        //DORACHAD     post (main menu) play button clickage
 
         (Ax = function (e, t, n, i, r = null) {
           const a = document.createElement("div");
@@ -42497,6 +42496,25 @@ function deleteElementsByClass(className) {
                 });
 
                 dchdPopupBoxBottom.appendChild(dchdC);
+
+
+                const dchdY = document.createElement("button");
+                dchdY.className = "button";
+                dchdY.innerHTML = '<img class="button-icon" src="images/apply.svg"> ';
+                dchdY.style.position = "relative";
+                dchdY.style.margin = "0";
+                dchdY.style.padding = "8px 18px";
+                dchdY.style.backgroundColor = "#112052";
+                dchdY.style.border = "none";
+                dchdY.style.color = "white";
+                dchdY.style.fontSize = "32px";
+                dchdY.append(document.createTextNode("Confirm"));
+                dchdY.addEventListener("click", () => {
+                  n.playUIClick();
+                  deleteElementsByClass("bingo-lobby-code")
+                });
+
+                dchdPopupBoxBottom.appendChild(dchdY);
 
 
 
