@@ -42039,7 +42039,7 @@ function sendMessageToServer(msgtype, message) {
             w.appendChild(y),
             YC(this, MC, "f").appendChild(w),
             YC(this, BC, "f").push(w);
-          const b = document.createElement("button");
+          /* const b = document.createElement("button");
           (b.className = "hidden"),
             (b.innerHTML = '<img src="images/editor.svg">'),
             b.addEventListener("click", () => {
@@ -42049,7 +42049,7 @@ function sendMessageToServer(msgtype, message) {
           (x.textContent = t.get("Editor")),
             b.appendChild(x),
             YC(this, MC, "f").appendChild(b),
-            YC(this, BC, "f").push(b);
+            YC(this, BC, "f").push(b); */
           const _ = document.createElement("button");
           (_.className = "hidden"),
             (_.innerHTML = '<img src="images/settings.svg">'),
@@ -42428,6 +42428,7 @@ function sendMessageToServer(msgtype, message) {
                 dchdPopupBoxCenter.style.margin = "0";
                 dchdPopupBoxCenter.style.padding = "40px";
                 dchdPopupBoxCenter.style.backgroundColor = "#212b58";
+                dchdPopupBoxCenter.style.textAlign = "center";
 
                 dchdPopupDiv.appendChild(dchdPopupBoxCenter);
 
@@ -42437,8 +42438,8 @@ function sendMessageToServer(msgtype, message) {
                 const dchdPopupBoxInput = document.createElement("input");
                 dchdPopupBoxInput.type = "text";
                 dchdPopupBoxInput.placeholder = "Room Code";
-                dchdPopupBoxInput.style.margin = "0 auto";
                 dchdPopupBoxInput.style.display = "block";
+                dchdPopupBoxInput.style.margin = "0";
                 dchdPopupBoxInput.style.padding = "0";
                 dchdPopupBoxInput.style.fontsize = "16px";
                 dchdPopupBoxInput.style.fontWeight = "normal";
