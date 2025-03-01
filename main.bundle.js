@@ -3,12 +3,14 @@ let socket;
 function socketconnect(socketurl) {
     socket = io.connect(socketurl); 
 
-    sendMessageToServer("info", "username")
 };
 
-function sendMessageToServer(msgtype, message) {
-    socket.emit(msgtype, message);
-};
+function sendMessageToServer(event, data, callback) {
+  socket.emit(event, data, (response) => {
+    //server response passed to callback
+    callback(response);
+  });
+}
 
 
 //socketconnect('DoraChadSS.pythonanywhere.com');
@@ -26,6 +28,11 @@ function deleteElementsByClass(className) {
   });
 };
 
+
+socket.on("inputReceived", (data) => {
+  console.log("Received from server:", data);
+  alert(`Server says: ${data}`);  // For example, show an alert with the input
+});
 
 
 
@@ -42514,8 +42521,17 @@ function deleteElementsByClass(className) {
                 dchdY.append(document.createTextNode("Confirm"));
                 dchdY.addEventListener("click", () => {
                   n.playUIClick();
-                  deleteElementsByClass("bingo-lobby-code")
-                  toggleInnerVisibility("menu", false);
+                  
+                  const bingoRoomCode = dchdPopupBoxInput.value;
+                  deleteElementsByClass("bingo-lobby-code");
+
+                  sendMessageToServer("joinRoom", bingoRoomCode, (response) => {
+                    //callback executed once the server responds
+                    console.log(response);
+                    
+                    toggleInnerVisibility("menu", false);
+                  });
+
                 });
 
                 dchdPopupBoxBottom.appendChild(dchdY);
