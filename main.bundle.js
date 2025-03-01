@@ -42362,23 +42362,49 @@ function sendMessageToServer(msgtype, message) {
                 socketconnect('DoraChadSS.pythonanywhere.com');    //conncet to socketio server
 
 
-                YC(this, kC, "m", HC).call(this),         //clears screen (ui elements)
-                YC(this, kC, "m", GC).call(this);          //gets rid of logo (and probably other things as well)
+                YC(this, kC, "m", HC).call(this);         //clears screen (ui elements)
+                //YC(this, kC, "m", GC).call(this);          //gets rid of logo (and probably other things as well)
                 //YC(this, RC, "f").show();               //shows next ui (track select, import, ect...)
 
 
 
                 const dchddiv = document.createElement("div");
-                (dchddiv.className = "bar");
+                dchddiv.className = "bingoLobby";
 
-                const dchdUIDiv = document.getElementById("ui");
 
-                dchdUIDiv.appendChild(dchddiv);
+                const dchdPopupDiv = document.createElement("div");
 
-                const dchdP = document.createElement("p");
-                  (dchdP.textContent = "test"),
+                dchdPopupDiv.className = "popupBox";
+                dchdPopupDiv.style.position = "absolute";
+                dchdPopupDiv.style.left = `calc(50% - 250px)`;
+                dchdPopupDiv.style.top = "40%";
+                dchdPopupDiv.style.zIndex = "2";
+                dchdPopupDiv.style.margin = "0";
+                dchdPopupDiv.style.padding = "0";
+                dchdPopupDiv.style.width = "500px";
+                dchdPopupDiv.style.boxSizing = "border-box";
+
+
+                dchdPopupDiv.appendChild(dchddiv);  //append
+
+                const dchdPopupBox = document.createElement("div");
+
+                dchdPopupBox.style.margin = "0";
+                dchdPopupBox.style.backgroundColor = "#212b58";
+
+                dchdPopupBox.appendChild(dchdPopupDiv);
+
+
+                const dchdP = document.createElement("h2");
+                
+                dchdP.textContent = "test";
+                dchdP.style.margin = "0";
+                dchdP.style.padding = "0";
+                dchdP.style.color = "white";
+                dchdP.style.fontSize = "38px";
+                dchdP.style.textAlign = "center";
                   
-                dchddiv.appendChild(dchdP);
+                dchdP.appendChild(dchdPopupBox);
                 
 
 
