@@ -42461,7 +42461,20 @@ function sendMessageToServer(msgtype, message) {
                 dchdPopupDiv.appendChild(dchdPopupBoxBottom);
                 
 
-
+                const dchdC = document.createElement("button");
+                dchdC.className = "button";
+                dchdC.innerHTML = '<img class="button-icon" src="images/back.svg"> ';
+                dchdC.style.position = "relative";
+                dchdC.style.margin = "0";
+                dchdC.style.padding = "0";
+                dchdC.style.backgroundColor = "#112052";
+                dchdC.style.border = "none";
+                dchdC.style.color = "white";
+                dchdC.style.fontSize = "32px";
+                dchdC.append(document.createTextNode("Back"));
+                dchdC.addEventListener("click", () => {
+                  n.playUIClick(), i();
+                });
 
 
 
