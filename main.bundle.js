@@ -3,13 +3,20 @@ let socket;
 function socketconnect(socketurl) {
     socket = io.connect(socketurl); 
 
+
+    socket.on('joinData', function(response) {
+      console.log(response); // This will log the server's response
+      // Handle response from server
+      if (response.status === 'Connected') {
+          // Proceed with joining the room
+      } else {
+          // Handle case where room does not exist (CFE)
+      }
+    });
 };
 
-function sendMessageToServer(event, data, callback) {
-  socket.emit(event, data, (response) => {
-    //server response passed to callback
-    callback(response);
-  });
+function sendMessageToServer(event, data) {
+  socket.emit(event, data)
 }
 
 
@@ -42521,12 +42528,9 @@ function deleteElementsByClass(className) {
                   const bingoRoomCode = dchdPopupBoxInput.value;
                   deleteElementsByClass("bingo-lobby-code");
 
-                  sendMessageToServer("joinRoom", bingoRoomCode, (response) => {
-                    //callback executed once the server responds
-                    console.log(response);
+                  sendMessageToServer("joinRoom", bingoRoomCode)
                     
-                    toggleInnerVisibility("menu", false);
-                  });
+                  toggleInnerVisibility("menu", false);
 
                 });
 
