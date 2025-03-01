@@ -14,9 +14,9 @@ function sendMessageToServer(msgtype, message) {
 //socketconnect('DoraChadSS.pythonanywhere.com');
 
 
-function toggleInnerVisibility(className, show) {
-  document.querySelectorAll(`.${className} > *`).forEach(el => {
-      el.style.visibility = show ? "visible" : "hidden";
+function toggleInnerVisibility(className, show, excludeSelector) {
+  document.querySelectorAll(`.${className} > *:not(${excludeSelector})`).forEach(el => {
+      el.style.display = show ? "block" : "none";
   });
 }
 
@@ -42377,7 +42377,7 @@ function deleteElementsByClass(className) {
 
                 socketconnect('DoraChadSS.pythonanywhere.com');    //conncet to socketio server
 
-                toggleInnerVisibility("menu", false)
+                toggleInnerVisibility("menu", false, ".logo")
                 //YC(this, kC, "m", HC).call(this);         //clears screen (ui elements)
                 //YC(this, kC, "m", GC).call(this);          //gets rid of logo (and probably other things as well)
                 //YC(this, RC, "f").show();               //shows next ui (track select, import, ect...)
@@ -42493,7 +42493,7 @@ function deleteElementsByClass(className) {
                 dchdC.addEventListener("click", () => {
                   n.playUIClick();
                   deleteElementsByClass("bingo-lobby-code")
-                  toggleInnerVisibility("menu", true);
+                  toggleInnerVisibility("menu", true, ".logo");
                 });
 
                 dchdPopupBoxBottom.appendChild(dchdC);
