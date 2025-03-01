@@ -3,16 +3,6 @@ let socket;
 function socketconnect(socketurl) {
     socket = io.connect(socketurl); 
 
-
-    socket.on('joinData', function(response) {
-      console.log(response); // This will log the server's response
-      // Handle response from server
-      if (response.status === 'Connected') {
-          // Proceed with joining the room
-      } else {
-          // Handle case where room does not exist (CFE)
-      }
-    });
 };
 
 function sendMessageToServer(event, data) {
@@ -20,8 +10,17 @@ function sendMessageToServer(event, data) {
 }
 
 
-//socketconnect('DoraChadSS.pythonanywhere.com');
+socketconnect('DoraChadSS.pythonanywhere.com');
 
+socket.on('joinData', function(response) {
+  console.log(response); // This will log the server's response
+  // Handle response from server
+  if (response.status === 'Connected') {
+      // Proceed with joining the room
+  } else {
+      // Handle case where room does not exist (CFE)
+  }
+});
 
 function toggleInnerVisibility(className, show, excludeSelector) {
   document.querySelectorAll(`.${className} > *:not(${excludeSelector})`).forEach(el => {
@@ -42384,7 +42383,7 @@ function deleteElementsByClass(className) {
               n.playUIClick(),
                 //when clicked
 
-                socketconnect('DoraChadSS.pythonanywhere.com');    //conncet to socketio server
+                //socketconnect('DoraChadSS.pythonanywhere.com');    //conncet to socketio server
 
                 toggleInnerVisibility("menu", false, ".logo")
                 //YC(this, kC, "m", HC).call(this);         //clears screen (ui elements)
