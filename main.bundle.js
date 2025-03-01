@@ -5,10 +5,6 @@ function socketconnect(socketurl) {
 
 };
 
-function sendMessageToServer(event, data) {
-  socket.emit(event, data)
-}
-
 
 socketconnect('DoraChadSS.pythonanywhere.com');
 
@@ -42527,7 +42523,7 @@ function deleteElementsByClass(className) {
                   const bingoRoomCode = dchdPopupBoxInput.value;
                   deleteElementsByClass("bingo-lobby-code");
 
-                  sendMessageToServer("joinRoom", bingoRoomCode)
+                  socket.emit("joinRoom", bingoRoomCode);
                     
                   toggleInnerVisibility("menu", false);
 
