@@ -42369,7 +42369,7 @@ function sendMessageToServer(msgtype, message) {
                 const dchdP = document.createElement("p");
                   (dchdP.textContent = "test"),
                   YC(this, MC, "f").appendChild(dchdP),
-                  YC(this, BC, "f").push(drcdP);
+                  YC(this, BC, "f").push(dchdP);
                 
 
 
