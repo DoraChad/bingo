@@ -42372,7 +42372,7 @@ function sendMessageToServer(msgtype, message) {
                 dchddiv.className = "bingoLobby";
 
                 const dchdUIDiv = document.getElementById("ui");   //get the pre-existing UI div
-                dchddiv.appendChild(dchdUIDiv);      //append our CSS to the game =)
+                dchdUIDiv.appendChild(dchddiv);      //append our CSS to the game =)
 
                 const dchdPopupDiv = document.createElement("div");
 
@@ -42387,14 +42387,14 @@ function sendMessageToServer(msgtype, message) {
                 dchdPopupDiv.style.boxSizing = "border-box";
 
 
-                dchdPopupDiv.appendChild(dchddiv);  //append
+                dchddiv.appendChild(dchdPopupDiv);  //append
 
                 const dchdPopupBox = document.createElement("div");
 
                 dchdPopupBox.style.margin = "0";
                 dchdPopupBox.style.backgroundColor = "#212b58";
 
-                dchdPopupBox.appendChild(dchdPopupDiv);
+                dchdPopupDiv.appendChild(dchdPopupBox);
 
 
                 const dchdP = document.createElement("h2");
@@ -42406,7 +42406,7 @@ function sendMessageToServer(msgtype, message) {
                 dchdP.style.fontSize = "38px";
                 dchdP.style.textAlign = "center";
                   
-                dchdP.appendChild(dchdPopupBox);
+                dchdPopupBox.appendChild(dchdP);
                 
 
 
