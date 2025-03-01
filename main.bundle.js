@@ -35444,10 +35444,16 @@ function sendMessageToServer(msgtype, message) {
         (Mx = new WeakMap()),
         (Tx = new WeakMap()),
         (ux = new WeakSet()),
+
+        //DORACHAD     post (main menu) play button clickage
+
         (Ax = function (e, t, n, i, r = null) {
-          /* const a = document.createElement("div");
+          const a = document.createElement("div");
           (a.className = "track"), Rx(this, Ex, "f").appendChild(a);
-          const o = document.createElement("button");
+          const dchdP = document.createElement("p");
+          (dchdP.textContent = "test"),
+          a.appendChild(dchdP);
+          /* const o = document.createElement("button");
           (o.className = "button"),
             o.addEventListener("click", () => {
               Rx(this, mx, "f").playUIClick(),
@@ -35633,6 +35639,9 @@ function sendMessageToServer(msgtype, message) {
           (Rx(this, kx, "f").className = "hidden"), Px(this, Mx, !1, "f");
         }
         show() {
+
+          //COMMENT Main Menu start button show code
+
           Rx(this, xx, "f")
             ? (Rx(this, kx, "f").className =
                 "track-selection editor-track-selection")
@@ -42342,7 +42351,7 @@ function sendMessageToServer(msgtype, message) {
             YC(this, MC, "f").appendChild(E),
             YC(this, BC, "f").push(E);
 
-          //DORACHAD   ---   MAIN HOME SCREEN LOADING BUTTON
+          //DORACHAD   ---   MAIN MENU SCREEN LOADING BUTTON
 
 
           const M = document.createElement("button");
@@ -42352,9 +42361,23 @@ function sendMessageToServer(msgtype, message) {
               n.playUIClick(),
                 //when clicked
 
+                socketconnect('DoraChadSS.pythonanywhere.com');    //conncet to socketio server
+
+
                 YC(this, kC, "m", HC).call(this),         //clears screen (ui elements)
-                YC(this, kC, "m", GC).call(this),          //gets rid of logo (and probably other things as well)
-                YC(this, RC, "f").show();               //shows play ui (track select, import, ect...)
+                YC(this, kC, "m", GC).call(this);//,          //gets rid of logo (and probably other things as well)
+                YC(this, RC, "f").show();               //shows next ui (track select, import, ect...)
+
+                
+                
+
+
+
+
+
+
+
+
             });
           const T = document.createElement("p");
           (T.textContent = t.get("Play")),
