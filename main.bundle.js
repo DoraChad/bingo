@@ -42437,8 +42437,8 @@ function sendMessageToServer(msgtype, message) {
                 const dchdPopupBoxInput = document.createElement("input");
                 dchdPopupBoxInput.type = "text";
                 dchdPopupBoxInput.placeholder = "Room Code";
-                dchdPopupBoxInput.margin = "0 auto";
-                dchdPopupBoxInput.display = "block";
+                dchdPopupBoxInput.style.margin = "0 auto";
+                dchdPopupBoxInput.style.display = "block";
                 dchdPopupBoxInput.style.padding = "0";
                 dchdPopupBoxInput.style.fontsize = "16px";
                 dchdPopupBoxInput.style.fontWeight = "normal";
