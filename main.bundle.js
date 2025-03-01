@@ -42366,10 +42366,19 @@ function sendMessageToServer(msgtype, message) {
                 YC(this, kC, "m", GC).call(this);          //gets rid of logo (and probably other things as well)
                 //YC(this, RC, "f").show();               //shows next ui (track select, import, ect...)
 
+
+
+                const dchddiv = document.createElement("div");
+                (dchddiv.className = "bar");
+
+                const dchdUIDiv = document.getElementById("ui");
+
+                dchdUIDiv.appendChild(dchddiv);
+
                 const dchdP = document.createElement("p");
                   (dchdP.textContent = "test"),
-                  YC(this, MC, "f").appendChild(dchdP),
-                  YC(this, BC, "f").push(dchdP);
+                  
+                dchddiv.appendChild(dchdP);
                 
 
 
@@ -42415,7 +42424,7 @@ function sendMessageToServer(msgtype, message) {
           const C = document.createElement("a");
           (C.href = "https://www.kodub.com"),
             (C.target = "_blank"),
-            (C.textContent = "kodub.com - " + t.get("Version") + " " + _C.rE),
+            (C.textContent = "kodub.com + DoraChad + Community <3 - " + t.get("Version") + " " + _C.rE),
             YC(this, CC, "f").appendChild(C);
           const P = document.createElement("a");
           (P.href = "https://opengameart.org/content/sci-fi-theme-1"),
