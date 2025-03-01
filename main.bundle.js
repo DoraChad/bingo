@@ -42426,8 +42426,8 @@ function sendMessageToServer(msgtype, message) {
                 dchdPopupBoxCenter.className = "center-box";
 
                 dchdPopupBoxCenter.style.margin = "0";
-                dchdPopupBoxCenter.style.padding = "0";
-                dchdPopupBoxCenter.style.backgroundColor = "#28346a";
+                dchdPopupBoxCenter.style.padding = "40px";
+                dchdPopupBoxCenter.style.backgroundColor = "#212b58";
 
                 dchdPopupDiv.appendChild(dchdPopupBoxCenter);
 
@@ -42437,10 +42437,11 @@ function sendMessageToServer(msgtype, message) {
                 const dchdPopupBoxInput = document.createElement("input");
                 dchdPopupBoxInput.type = "text";
                 dchdPopupBoxInput.placeholder = "Room Code";
-                dchdPopupBoxInput.margin = "auto";
+                dchdPopupBoxInput.margin = "0 auto";
                 dchdPopupBoxInput.display = "block";
                 dchdPopupBoxInput.style.padding = "0";
                 dchdPopupBoxInput.style.fontsize = "16px";
+                dchdPopupBoxInput.style.fontWeight = "normal";
                 dchdPopupBoxInput.style.margin = "29px";
 
                 dchdPopupBoxCenter.appendChild(dchdPopupBoxInput);
