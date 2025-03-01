@@ -35450,9 +35450,7 @@ function sendMessageToServer(msgtype, message) {
         (Ax = function (e, t, n, i, r = null) {
           const a = document.createElement("div");
           (a.className = "track"), Rx(this, Ex, "f").appendChild(a);
-          const dchdP = document.createElement("p");
-          (dchdP.textContent = "test"),
-          a.appendChild(dchdP);
+          
           /* const o = document.createElement("button");
           (o.className = "button"),
             o.addEventListener("click", () => {
@@ -42364,11 +42362,14 @@ function sendMessageToServer(msgtype, message) {
                 socketconnect('DoraChadSS.pythonanywhere.com');    //conncet to socketio server
 
 
-                //YC(this, kC, "m", HC).call(this),         //clears screen (ui elements)
-                //YC(this, kC, "m", GC).call(this);          //gets rid of logo (and probably other things as well)
+                YC(this, kC, "m", HC).call(this),         //clears screen (ui elements)
+                YC(this, kC, "m", GC).call(this);          //gets rid of logo (and probably other things as well)
                 //YC(this, RC, "f").show();               //shows next ui (track select, import, ect...)
 
-                VC(this, RC, "f").innerHTML = "";
+                const dchdP = document.createElement("p");
+                  (dchdP.textContent = "test"),
+                  YC(this, MC, "f").appendChild(dchdP),
+                  YC(this, BC, "f").push(drcdP);
                 
 
 
