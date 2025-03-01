@@ -13,6 +13,21 @@ function sendMessageToServer(msgtype, message) {
 
 //socketconnect('DoraChadSS.pythonanywhere.com');
 
+
+function toggleVisibility(className, show) {
+  document.querySelectorAll(`.${className}`).forEach(el => {
+      el.style.display = show ? "block" : "none"; // "block" makes it visible, "none" hides it
+  });
+};
+function deleteElementsByClass(className) {
+  document.querySelectorAll(`.${className}`).forEach(el => {
+      el.remove(); // Removes each element from the DOM
+  });
+};
+
+
+
+
 (() => {
   var e = {
       811: (e, t, n) => {
@@ -42361,8 +42376,8 @@ function sendMessageToServer(msgtype, message) {
 
                 socketconnect('DoraChadSS.pythonanywhere.com');    //conncet to socketio server
 
-
-                YC(this, kC, "m", HC).call(this);         //clears screen (ui elements)
+                toggleVisibility("menu", false)
+                //YC(this, kC, "m", HC).call(this);         //clears screen (ui elements)
                 //YC(this, kC, "m", GC).call(this);          //gets rid of logo (and probably other things as well)
                 //YC(this, RC, "f").show();               //shows next ui (track select, import, ect...)
 
@@ -42400,7 +42415,7 @@ function sendMessageToServer(msgtype, message) {
                 dchdPopupBoxTop.className = "top-box";
 
                 dchdPopupBoxTop.style.margin = "0";
-                dchdPopupBoxTop.style.padding = "0";
+                dchdPopupBoxTop.style.padding = "10px";
                 dchdPopupBoxTop.style.backgroundColor = "#28346a";
 
                 dchdPopupDiv.appendChild(dchdPopupBoxTop);
@@ -42444,6 +42459,8 @@ function sendMessageToServer(msgtype, message) {
                 dchdPopupBoxInput.style.fontsize = "16px";
                 dchdPopupBoxInput.style.fontWeight = "normal";
                 dchdPopupBoxInput.style.margin = "29px";
+                dchdPopupBoxInput.style.width = `calc(75%)`;
+                dchdPopupBoxInput.style.height = "50px";
 
                 dchdPopupBoxCenter.appendChild(dchdPopupBoxInput);
 
@@ -42455,7 +42472,7 @@ function sendMessageToServer(msgtype, message) {
                 dchdPopupBoxBottom.className = "bottom-box";
 
                 dchdPopupBoxBottom.style.margin = "0";
-                dchdPopupBoxBottom.style.padding = "0";
+                dchdPopupBoxBottom.style.padding = "10px";
                 dchdPopupBoxBottom.style.backgroundColor = "#28346a";
 
                 dchdPopupDiv.appendChild(dchdPopupBoxBottom);
@@ -42466,14 +42483,16 @@ function sendMessageToServer(msgtype, message) {
                 dchdC.innerHTML = '<img class="button-icon" src="images/back.svg"> ';
                 dchdC.style.position = "relative";
                 dchdC.style.margin = "0";
-                dchdC.style.padding = "0";
+                dchdC.style.padding = "8px 18px";
                 dchdC.style.backgroundColor = "#112052";
                 dchdC.style.border = "none";
                 dchdC.style.color = "white";
                 dchdC.style.fontSize = "32px";
                 dchdC.append(document.createTextNode("Back"));
                 dchdC.addEventListener("click", () => {
-                  n.playUIClick(), i();
+                  n.playUIClick();
+                  deleteElementsByClass("bingo-lobby-code")
+                  toggleVisibility("menu", true);
                 });
 
                 dchdPopupBoxBottom.appendChild(dchdC);
