@@ -42371,7 +42371,7 @@ function sendMessageToServer(msgtype, message) {
 
                 //organizational div
                 const dchddiv = document.createElement("div");
-                dchddiv.className = "bingoLobby";
+                dchddiv.className = "bingo-lobby-code";
 
                 const dchdUIDiv = document.getElementById("ui");   //get the pre-existing UI div
                 dchdUIDiv.appendChild(dchddiv);      //append our CSS to the game =)
@@ -42379,6 +42379,7 @@ function sendMessageToServer(msgtype, message) {
 
                 //box background
                 const dchdPopupDiv = document.createElement("div");
+                dchdPopupDiv.className = "popup-background";
 
                 dchdPopupDiv.className = "popupBox";
                 dchdPopupDiv.style.position = "absolute";
@@ -42396,6 +42397,7 @@ function sendMessageToServer(msgtype, message) {
 
                 //top bar background
                 const dchdPopupBoxTop = document.createElement("div");
+                dchdPopupBoxTop.className = "top-box";
 
                 dchdPopupBoxTop.style.margin = "0";
                 dchdPopupBoxTop.style.padding = "0";
@@ -42406,6 +42408,7 @@ function sendMessageToServer(msgtype, message) {
 
                 //top bar text
                 const dchdP = document.createElement("h2");
+                
                 
                 dchdP.textContent = "Rooms";
                 dchdP.style.margin = "0";
@@ -42420,6 +42423,7 @@ function sendMessageToServer(msgtype, message) {
 
                 //center part background
                 const dchdPopupBoxCenter = document.createElement("div");
+                dchdPopupBoxCenter.className = "center-box";
 
                 dchdPopupBoxCenter.style.margin = "0";
                 dchdPopupBoxCenter.style.padding = "0";
@@ -42431,7 +42435,10 @@ function sendMessageToServer(msgtype, message) {
 
                 //center part input (for room code)
                 const dchdPopupBoxInput = document.createElement("input");
-                dchdPopupBoxInput.type = "Room Code";
+                dchdPopupBoxInput.type = "text";
+                dchdPopupBoxInput.placeholder = "Room Code";
+                dchdPopupBoxInput.margin = "auto";
+                dchdPopupBoxInput.display = "block";
                 dchdPopupBoxInput.style.padding = "0";
                 dchdPopupBoxInput.style.fontsize = "16px";
                 dchdPopupBoxInput.style.margin = "29px";
@@ -42443,6 +42450,7 @@ function sendMessageToServer(msgtype, message) {
 
                 //bottom part background
                 const dchdPopupBoxBottom = document.createElement("div");
+                dchdPopupBoxBottom.className = "bottom-box";
 
                 dchdPopupBoxBottom.style.margin = "0";
                 dchdPopupBoxBottom.style.padding = "0";
