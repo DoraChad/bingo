@@ -42371,6 +42371,8 @@ function sendMessageToServer(msgtype, message) {
                 const dchddiv = document.createElement("div");
                 dchddiv.className = "bingoLobby";
 
+                const dchdUIDiv = document.getElementById("ui");   //get the pre-existing UI div
+                dchddiv.appendChild(dchdUIDiv);      //append our CSS to the game =)
 
                 const dchdPopupDiv = document.createElement("div");
 
