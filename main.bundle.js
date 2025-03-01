@@ -42364,11 +42364,11 @@ function sendMessageToServer(msgtype, message) {
                 socketconnect('DoraChadSS.pythonanywhere.com');    //conncet to socketio server
 
 
-                YC(this, kC, "m", HC).call(this),         //clears screen (ui elements)
-                YC(this, kC, "m", GC).call(this);//,          //gets rid of logo (and probably other things as well)
-                YC(this, RC, "f").show();               //shows next ui (track select, import, ect...)
+                //YC(this, kC, "m", HC).call(this),         //clears screen (ui elements)
+                //YC(this, kC, "m", GC).call(this);          //gets rid of logo (and probably other things as well)
+                //YC(this, RC, "f").show();               //shows next ui (track select, import, ect...)
 
-                
+                VC(this, RC, "f").innerHTML = "";
                 
 
 
