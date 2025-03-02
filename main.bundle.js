@@ -137,7 +137,7 @@ function playLobby() {
   dchdC.style.fontSize = "32px";
   dchdC.append(document.createTextNode("Back"));
   dchdC.addEventListener("click", () => {
-    //n.playUIClick();
+    //n.playUIClick();                        //custom sfx system needed
     deleteElementsByClass("bingo-lobby-code")
     toggleInnerVisibility("menu", true, ".logo");
   });
@@ -159,14 +159,15 @@ function playLobby() {
   dchdY.style.float = "right";
   dchdY.append(document.createTextNode("Confirm"));
   dchdY.addEventListener("click", () => {
-    //n.playUIClick();
+
+    //n.playUIClick();                                    //custom sfx system needed
     
     const bingoRoomCode = dchdPopupBoxInput.value;
-    deleteElementsByClass("bingo-lobby-code");
+    deleteElementsByClass("popupBox");
 
     //socket.emit("joinRoom", bingoRoomCode);
       
-    toggleInnerVisibility("menu", false);
+    //toggleInnerVisibility("menu", false);
 
     joinerror("Room does not exist");
 
@@ -209,7 +210,7 @@ function joinerror(message) {
   dchdErrorText.style.fontSize = "32px";
   dchdErrorText.style.overflowWrap = "break-word";
   dchdErrorText.style.whiteSpace = "pre-wrap";
-  dchdErrorText.style.Color = "white";
+  dchdErrorText.style.color = "white";
 
   dchdPopupDiv.appendChild(dchdErrorText);
 
@@ -218,7 +219,7 @@ function joinerror(message) {
 
   dchdErrorButton.textContent = "Ok"
   dchdErrorButton.addEventListener("click", () => {
-    //n.playUIClick();
+    //n.playUIClick();                                      //custom sfx system needed
   
     deleteElementsByClass("error-popup");
       
