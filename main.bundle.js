@@ -198,6 +198,7 @@ function joinerror(message) {
   dchdPopupDiv.style.boxSizing = "border-box";
   dchdPopupDiv.style.backgroundColor = "#28346a";
   dchdPopupDiv.style.textAlign = "center";
+  dchdPopupDiv.style.top = "40%";
 
   dchdUIDiv.appendChild(dchdPopupDiv);
 
@@ -225,6 +226,8 @@ function joinerror(message) {
       
     playLobby()
   });
+
+  dchdPopupDiv.appendChild(dchdErrorButton);
 
 };
 
