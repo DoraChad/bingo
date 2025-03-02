@@ -6,7 +6,8 @@ function socketconnect(socketurl) {
 };
 
 
-socketconnect('DoraChadSS.pythonanywhere.com');
+
+//socketconnect('DoraChadSS.pythonanywhere.com');
 
 socket.on('joinData', function(response) {
   console.log(response); // This will log the server's response
@@ -30,8 +31,201 @@ function deleteElementsByClass(className) {
   });
 };
 
+function playLobby() {
+
+  //organizational div
+
+  const dchdUIDiv = document.getElementById("ui");   //get the pre-existing UI div
 
 
+  //box background
+  const dchdPopupDiv = document.createElement("div");
+  dchdPopupDiv.className = "lobby-popup";
+
+  dchdPopupDiv.className = "popupBox";
+  dchdPopupDiv.style.position = "absolute";
+  dchdPopupDiv.style.left = `calc(50% - 250px)`;
+  dchdPopupDiv.style.top = "40%";
+  dchdPopupDiv.style.zIndex = "2";
+  dchdPopupDiv.style.margin = "0";
+  dchdPopupDiv.style.padding = "0";
+  dchdPopupDiv.style.width = "500px";
+  dchdPopupDiv.style.boxSizing = "border-box";
+  dchdPopupDiv.style.backgroundColor = "#212b58";
+
+
+  dchdUIDiv.appendChild(dchdPopupDiv);  //append
+
+  //top bar background
+  const dchdPopupBoxTop = document.createElement("div");
+  dchdPopupBoxTop.className = "top-box";
+
+  dchdPopupBoxTop.style.margin = "0";
+  dchdPopupBoxTop.style.padding = "10px";
+  dchdPopupBoxTop.style.backgroundColor = "#28346a";
+
+  dchdPopupDiv.appendChild(dchdPopupBoxTop);
+
+
+  //top bar text
+  const dchdP = document.createElement("h2");
+  
+  
+  dchdP.textContent = "Bingo Rooms";
+  dchdP.style.margin = "0";
+  dchdP.style.padding = "0";
+  dchdP.style.color = "white";
+  dchdP.style.fontWeight = "normal";
+  dchdP.style.fontSize = "38px";
+  dchdP.style.textAlign = "center";
+    
+  dchdPopupBoxTop.appendChild(dchdP);
+
+
+  //center part background
+  const dchdPopupBoxCenter = document.createElement("div");
+  dchdPopupBoxCenter.className = "center-box";
+
+  dchdPopupBoxCenter.style.margin = "0";
+  dchdPopupBoxCenter.style.padding = "40px";
+  dchdPopupBoxCenter.style.backgroundColor = "#212b58";
+  dchdPopupBoxCenter.style.textAlign = "center";
+
+  dchdPopupDiv.appendChild(dchdPopupBoxCenter);
+
+
+
+  //center part input (for room code)
+  const dchdPopupBoxInput = document.createElement("input");
+  dchdPopupBoxInput.type = "text";
+  dchdPopupBoxInput.placeholder = "Room Code";
+  dchdPopupBoxInput.style.display = "block";
+  dchdPopupBoxInput.style.margin = "0";
+  dchdPopupBoxInput.style.padding = "0";
+  dchdPopupBoxInput.style.fontsize = "16px";
+  dchdPopupBoxInput.style.fontWeight = "normal";
+  dchdPopupBoxInput.style.margin = "29px";
+  dchdPopupBoxInput.style.width = `calc(75%)`;
+  dchdPopupBoxInput.style.height = "50px";
+
+  dchdPopupBoxCenter.appendChild(dchdPopupBoxInput);
+
+  
+
+
+  //bottom part background
+  const dchdPopupBoxBottom = document.createElement("div");
+  dchdPopupBoxBottom.className = "bottom-box";
+
+  dchdPopupBoxBottom.style.margin = "0";
+  dchdPopupBoxBottom.style.padding = "10px";
+  dchdPopupBoxBottom.style.backgroundColor = "#28346a";
+
+  dchdPopupDiv.appendChild(dchdPopupBoxBottom);
+  
+
+  //back button
+  const dchdC = document.createElement("button");
+  dchdC.className = "button";
+  dchdC.innerHTML = '<img class="button-icon" src="images/back.svg"> ';
+  dchdC.style.position = "relative";
+  dchdC.style.margin = "0";
+  dchdC.style.padding = "8px 18px";
+  dchdC.style.backgroundColor = "#112052";
+  dchdC.style.border = "none";
+  dchdC.style.color = "white";
+  dchdC.style.fontSize = "32px";
+  dchdC.append(document.createTextNode("Back"));
+  dchdC.addEventListener("click", () => {
+    n.playUIClick();
+    deleteElementsByClass("bingo-lobby-code")
+    toggleInnerVisibility("menu", true, ".logo");
+  });
+
+  dchdPopupBoxBottom.appendChild(dchdC);
+
+
+  //Confirm button
+  const dchdY = document.createElement("button");
+  dchdY.className = "button";
+  dchdY.innerHTML = '<img class="button-icon" src="images/apply.svg"> ';
+  dchdY.style.position = "relative";
+  dchdY.style.margin = "0";
+  dchdY.style.padding = "8px 18px";
+  dchdY.style.backgroundColor = "#112052";
+  dchdY.style.border = "none";
+  dchdY.style.color = "white";
+  dchdY.style.fontSize = "32px";
+  dchdY.style.float = "right";
+  dchdY.append(document.createTextNode("Confirm"));
+  dchdY.addEventListener("click", () => {
+    n.playUIClick();
+    
+    const bingoRoomCode = dchdPopupBoxInput.value;
+    deleteElementsByClass("bingo-lobby-code");
+
+    //socket.emit("joinRoom", bingoRoomCode);
+      
+    toggleInnerVisibility("menu", false);
+
+    joinerror("Room does not exist");
+
+  });
+
+  dchdPopupBoxBottom.appendChild(dchdY);
+
+
+
+};
+
+
+function joinerror(message) {
+  const dchdUIDiv = document.getElementById("ui");   //get the pre-existing UI div
+
+  //box background
+  const dchdPopupDiv = document.createElement("div");
+  dchdPopupDiv.className = "error-popup";
+
+  dchdPopupDiv.className = "popupBox";
+  dchdPopupDiv.style.position = "absolute";
+  dchdPopupDiv.style.left = `calc(50% - 250px)`;
+  dchdPopupDiv.style.top = "30%";
+  dchdPopupDiv.style.zIndex = "2";
+  dchdPopupDiv.style.margin = "0";
+  dchdPopupDiv.style.padding = "16px";
+  dchdPopupDiv.style.width = "500px";
+  dchdPopupDiv.style.boxSizing = "border-box";
+  dchdPopupDiv.style.backgroundColor = "#28346a";
+  dchdPopupDiv.style.textAlign = "center";
+
+  dchdUIDiv.appendChild(dchdPopupDiv);
+
+  const dchdErrorText = document.createElement("p");
+
+  dchdErrorText.textContent = message;
+  dchdErrorText.style.margin = "20px";
+  dchdErrorText.style.padding = "0";
+  dchdErrorText.style.lineHeight = "0.9";
+  dchdErrorText.style.fontSize = "32px";
+  dchdErrorText.style.overflowWrap = "break-word";
+  dchdErrorText.style.whiteSpace = "pre-wrap";
+  dchdErrorText.style.Color = "white";
+
+  dchdPopupDiv.appendChild(dchdErrorText);
+
+  const dchdErrorButton = document.createElement("button")
+  dchdErrorButton.className = "confirm-button";
+
+  dchdErrorButton.textContent = "Ok"
+  dchdErrorButton.addEventListener("click", () => {
+    //n.playUIClick();
+  
+    deleteElementsByClass("error-popup");
+      
+    playLobby()
+  });
+
+};
 
 
 (() => {
@@ -42381,159 +42575,12 @@ function deleteElementsByClass(className) {
 
                 //socketconnect('DoraChadSS.pythonanywhere.com');    //conncet to socketio server
 
-                toggleInnerVisibility("menu", false, ".logo")
+                toggleInnerVisibility("menu", false, ".logo");
                 //YC(this, kC, "m", HC).call(this);         //clears screen (ui elements)
                 //YC(this, kC, "m", GC).call(this);          //gets rid of logo (and probably other things as well)
                 //YC(this, RC, "f").show();               //shows next ui (track select, import, ect...)
 
-
-
-
-                //organizational div
-                const dchddiv = document.createElement("div");
-                dchddiv.className = "bingo-lobby-code";
-
-                const dchdUIDiv = document.getElementById("ui");   //get the pre-existing UI div
-                dchdUIDiv.appendChild(dchddiv);      //append our CSS to the game =)
-
-
-                //box background
-                const dchdPopupDiv = document.createElement("div");
-                dchdPopupDiv.className = "popup-background";
-
-                dchdPopupDiv.className = "popupBox";
-                dchdPopupDiv.style.position = "absolute";
-                dchdPopupDiv.style.left = `calc(50% - 250px)`;
-                dchdPopupDiv.style.top = "40%";
-                dchdPopupDiv.style.zIndex = "2";
-                dchdPopupDiv.style.margin = "0";
-                dchdPopupDiv.style.padding = "0";
-                dchdPopupDiv.style.width = "500px";
-                dchdPopupDiv.style.boxSizing = "border-box";
-                dchdPopupDiv.style.backgroundColor = "#212b58";
-
-
-                dchddiv.appendChild(dchdPopupDiv);  //append
-
-                //top bar background
-                const dchdPopupBoxTop = document.createElement("div");
-                dchdPopupBoxTop.className = "top-box";
-
-                dchdPopupBoxTop.style.margin = "0";
-                dchdPopupBoxTop.style.padding = "10px";
-                dchdPopupBoxTop.style.backgroundColor = "#28346a";
-
-                dchdPopupDiv.appendChild(dchdPopupBoxTop);
-
-
-                //top bar text
-                const dchdP = document.createElement("h2");
-                
-                
-                dchdP.textContent = "Bingo Rooms";
-                dchdP.style.margin = "0";
-                dchdP.style.padding = "0";
-                dchdP.style.color = "white";
-                dchdP.style.fontWeight = "normal";
-                dchdP.style.fontSize = "38px";
-                dchdP.style.textAlign = "center";
-                  
-                dchdPopupBoxTop.appendChild(dchdP);
-
-
-                //center part background
-                const dchdPopupBoxCenter = document.createElement("div");
-                dchdPopupBoxCenter.className = "center-box";
-
-                dchdPopupBoxCenter.style.margin = "0";
-                dchdPopupBoxCenter.style.padding = "40px";
-                dchdPopupBoxCenter.style.backgroundColor = "#212b58";
-                dchdPopupBoxCenter.style.textAlign = "center";
-
-                dchdPopupDiv.appendChild(dchdPopupBoxCenter);
-
-
-
-                //center part input (for room code)
-                const dchdPopupBoxInput = document.createElement("input");
-                dchdPopupBoxInput.type = "text";
-                dchdPopupBoxInput.placeholder = "Room Code";
-                dchdPopupBoxInput.style.display = "block";
-                dchdPopupBoxInput.style.margin = "0";
-                dchdPopupBoxInput.style.padding = "0";
-                dchdPopupBoxInput.style.fontsize = "16px";
-                dchdPopupBoxInput.style.fontWeight = "normal";
-                dchdPopupBoxInput.style.margin = "29px";
-                dchdPopupBoxInput.style.width = `calc(75%)`;
-                dchdPopupBoxInput.style.height = "50px";
-
-                dchdPopupBoxCenter.appendChild(dchdPopupBoxInput);
-
-                
-
-
-                //bottom part background
-                const dchdPopupBoxBottom = document.createElement("div");
-                dchdPopupBoxBottom.className = "bottom-box";
-
-                dchdPopupBoxBottom.style.margin = "0";
-                dchdPopupBoxBottom.style.padding = "10px";
-                dchdPopupBoxBottom.style.backgroundColor = "#28346a";
-
-                dchdPopupDiv.appendChild(dchdPopupBoxBottom);
-                
-
-                //back button
-                const dchdC = document.createElement("button");
-                dchdC.className = "button";
-                dchdC.innerHTML = '<img class="button-icon" src="images/back.svg"> ';
-                dchdC.style.position = "relative";
-                dchdC.style.margin = "0";
-                dchdC.style.padding = "8px 18px";
-                dchdC.style.backgroundColor = "#112052";
-                dchdC.style.border = "none";
-                dchdC.style.color = "white";
-                dchdC.style.fontSize = "32px";
-                dchdC.append(document.createTextNode("Back"));
-                dchdC.addEventListener("click", () => {
-                  n.playUIClick();
-                  deleteElementsByClass("bingo-lobby-code")
-                  toggleInnerVisibility("menu", true, ".logo");
-                });
-
-                dchdPopupBoxBottom.appendChild(dchdC);
-
-
-                //Confirm button
-                const dchdY = document.createElement("button");
-                dchdY.className = "button";
-                dchdY.innerHTML = '<img class="button-icon" src="images/apply.svg"> ';
-                dchdY.style.position = "relative";
-                dchdY.style.margin = "0";
-                dchdY.style.padding = "8px 18px";
-                dchdY.style.backgroundColor = "#112052";
-                dchdY.style.border = "none";
-                dchdY.style.color = "white";
-                dchdY.style.fontSize = "32px";
-                dchdY.style.float = "right";
-                dchdY.append(document.createTextNode("Confirm"));
-                dchdY.addEventListener("click", () => {
-                  n.playUIClick();
-                  
-                  const bingoRoomCode = dchdPopupBoxInput.value;
-                  deleteElementsByClass("bingo-lobby-code");
-
-                  socket.emit("joinRoom", bingoRoomCode);
-                    
-                  toggleInnerVisibility("menu", false);
-
-                });
-
-                dchdPopupBoxBottom.appendChild(dchdY);
-
-
-
-
+                playLobby();
             });
           const T = document.createElement("p");
           (T.textContent = t.get("Play")),
