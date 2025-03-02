@@ -137,7 +137,7 @@ function playLobby() {
   dchdC.style.fontSize = "32px";
   dchdC.append(document.createTextNode("Back"));
   dchdC.addEventListener("click", () => {
-    n.playUIClick();
+    //n.playUIClick();
     deleteElementsByClass("bingo-lobby-code")
     toggleInnerVisibility("menu", true, ".logo");
   });
