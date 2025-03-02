@@ -159,7 +159,7 @@ function playLobby() {
   dchdY.style.float = "right";
   dchdY.append(document.createTextNode("Confirm"));
   dchdY.addEventListener("click", () => {
-    n.playUIClick();
+    //n.playUIClick();
     
     const bingoRoomCode = dchdPopupBoxInput.value;
     deleteElementsByClass("bingo-lobby-code");
