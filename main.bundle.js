@@ -247,7 +247,6 @@ function teamLobbyUi(color, div) {
   teamdiv.style.display = "flex";
   teamdiv.style.flexDirection = "column"
   teamdiv.style.alignItems = "center";
-  teamdiv.style.justifyContent = "center";
   teamdiv.style.height = "100vh";
 
 
@@ -263,7 +262,7 @@ function teamLobbyUi(color, div) {
   teamtitle.style.padding = "10px";
   teamtitle.style.color = "white";
   teamtitle.style.float = "left";
-  teamtitle.style.width = "15%";
+  teamtitle.style.width = "75%";
   teamtitle.style.margin = "50px";
 
   teamdiv.appendChild(teamtitle);
@@ -320,7 +319,7 @@ function inLobby(code) {
   dchdC.className = "button";
   dchdC.innerHTML = '<img class="button-icon" src="images/back.svg"> ';
   dchdC.style.position = "relative";
-  dchdC.style.margin = "0";
+  dchdC.style.margin = "10px";
   dchdC.style.padding = "8px 18px";
   dchdC.style.backgroundColor = "#112052";
   dchdC.style.border = "none";
@@ -370,6 +369,8 @@ function inLobby(code) {
 
   teamLobbyUi("Red", teamsalign);
   teamLobbyUi("Green", teamsalign);
+  teamLobbyUi("Blue", teamsalign);
+  teamLobbyUi("Yellow", teamsalign);
 
 
 };
