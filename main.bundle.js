@@ -363,17 +363,19 @@ function inLobby(code) {
   ready.style.color = "white";
   ready.style.fontSize = "32px";
   ready.style.float = "right";
+  const iconHTML = ready.innerHTML;
+
   ready.append(document.createTextNode("Ready"));
+  
   ready.addEventListener("click", () => {
     if (ready.style.backgroundColor == "rgb(17, 32, 82)") {
       ready.style.backgroundColor = "rgb(82, 17, 17)";
-      ready.textContent = "Unready";
+      ready.textContent = iconHTML + "Unready";
     } else {
       ready.style.backgroundColor = "#112052";  // Reset background color
-      ready.textContent = "Ready";  // Change the button text back to "Ready"
+      ready.textContent = iconHTML + "Ready";  // Change the button text back to "Ready"
     };
 
-    ready.innerHTML = '<img class="button-icon" src="images/apply.svg"> ';
 
     //n.playUIClick();                        //custom sfx system needed
   });
