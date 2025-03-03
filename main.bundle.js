@@ -229,15 +229,9 @@ function joinerror(message) {
   dchdY.addEventListener("click", () => {
 
     //n.playUIClick();                                    //custom sfx system needed
-    
-    const bingoRoomCode = dchdPopupBoxInput.value;
-    deleteElementsByClass("popupBox");
+    deleteElementsByClass("error-popup");
 
-    //socket.emit("joinRoom", bingoRoomCode);
-      
-    //toggleInnerVisibility("menu", false);
-
-    joinerror("Room does not exist");
+    playLobby();
 
   });
 
