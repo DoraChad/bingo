@@ -225,7 +225,6 @@ function joinerror(message) {
   dchdY.style.border = "none";
   dchdY.style.color = "white";
   dchdY.style.fontSize = "32px";
-  dchdY.style.float = "right";
   dchdY.append(document.createTextNode("Ok"));
   dchdY.addEventListener("click", () => {
 
