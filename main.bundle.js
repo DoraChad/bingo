@@ -42768,12 +42768,14 @@ function inLobby(code) {
 
                 socket.on('connect_error', function(error) {
                   joinerror("Connection error");
+                  socket.disconnect();
                   return;
                   // Display an error message to the user or retry connection
                 });
               
                 socket.on('connect_failed', function() {
                   joinerror("Connection failed.");
+                  socket.disconnect();
                   return;
                     // Handle connection failure, e.g., show a retry button
                 });
