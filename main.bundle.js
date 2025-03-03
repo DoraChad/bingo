@@ -298,6 +298,8 @@ function teamLobbyUi(color, div) {
   teamplayers.style.color = "white";
   teamplayers.textContent = "younfella0\ndorachad";
 
+  teamdiv.appendChild(teamplayers);
+
 };
 
 function inLobby(code) {
