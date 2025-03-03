@@ -370,10 +370,10 @@ function inLobby(code) {
   ready.addEventListener("click", () => {
     if (ready.style.backgroundColor == "rgb(17, 32, 82)") {
       ready.style.backgroundColor = "rgb(82, 17, 17)";
-      ready.textContent = iconHTML + "Unready";
+      ready.innerHTML = iconHTML + "Unready";
     } else {
       ready.style.backgroundColor = "#112052";  // Reset background color
-      ready.textContent = iconHTML + "Ready";  // Change the button text back to "Ready"
+      ready.innerHTML = iconHTML + "Ready";  // Change the button text back to "Ready"
     };
 
 
