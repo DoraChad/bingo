@@ -41,7 +41,6 @@ function playLobby() {
   //box background
   const dchdPopupDiv = document.createElement("div");
   dchdPopupDiv.className = "popupBox";
-  dchdPopupDiv.innerHTML = '<div class="lobby-popup">';
 
   dchdPopupDiv.style.position = "absolute";
   dchdPopupDiv.style.left = `calc(50% - 250px)`;
@@ -59,7 +58,6 @@ function playLobby() {
   //top bar background
   const dchdPopupBoxTop = document.createElement("div");
   dchdPopupBoxTop.className = "top-box";
-  dchdPopupBoxTop.innerHTML = '<div class="top-box">';
 
   dchdPopupBoxTop.style.margin = "0";
   dchdPopupBoxTop.style.padding = "10px";
@@ -85,7 +83,6 @@ function playLobby() {
   //center part background
   const dchdPopupBoxCenter = document.createElement("div");
   dchdPopupBoxCenter.className = "center-box";
-  dchdPopupBoxCenter.innerHTML = '<div class="center-box">';
 
   dchdPopupBoxCenter.style.margin = "0";
   dchdPopupBoxCenter.style.padding = "40px";
@@ -117,7 +114,6 @@ function playLobby() {
   //bottom part background
   const dchdPopupBoxBottom = document.createElement("div");
   dchdPopupBoxBottom.className = "bottom-box";
-  dchdPopupBoxBottom.innerHTML = '<div class="bottom-box">';
 
   dchdPopupBoxBottom.style.margin = "0";
   dchdPopupBoxBottom.style.padding = "10px";
@@ -190,7 +186,6 @@ function joinerror(message) {
   //box background
   const dchdPopupDiv = document.createElement("div");
   dchdPopupDiv.className = "error-popup";
-  dchdPopupDiv.innerHTML = '<div class="error-popup">';
 
   dchdPopupDiv.className = "popupBox";
   dchdPopupDiv.style.position = "absolute";
@@ -244,13 +239,56 @@ function joinerror(message) {
 
 };
 
+function teamLobbyUi(color, div) {
+
+  //team1 div
+  const teamdiv = document.createElement("div");
+  teamdiv.className = `${color}-team`;
+  teamdiv.style.textAlign = "center";
+
+  div.appendChild(teamdiv);
+
+  //team1 text
+  const teamtitle = document.createElement("h2");
+
+  teamtitle.textContent = `${color} Team"`
+  teamtitle.style.borderBottom = "2px solid white";
+  teamtitle.style.fontSize = "32px";
+  teamtitle.style.fontWeight = "normal";
+  teamtitle.style.padding = "0";
+  teamtitle.style.color = "white";
+  teamtitle.style.float = "left";
+  teamtitle.style.width = "15%";
+
+  div.appendChild(teamtitle);
+
+  //team1 join button
+  const dchdJ = document.createElement("button");
+  dchdJ.className = "button";
+  dchdJ.style.position = "relative";
+  dchdJ.style.margin = "8px 18px";
+  dchdJ.style.padding = "0";
+  dchdJ.style.backgroundColor = "#112052";
+  dchdJ.style.border = "none";
+  dchdJ.style.color = "white";
+  dchdJ.style.fontSize = "32px";
+  dchdJ.append(document.createTextNode("Join Team"));
+  dchdJ.addEventListener("click", () => {
+    //n.playUIClick();                        //custom sfx system needed
+    //deleteElementsByClass("lobby")
+    //playLobby()
+  });
+
+  div.appendChild(dchdJ);
+
+};
+
 function inLobby(code) {
   const dchdUIDiv = document.getElementById("ui");   //get the pre-existing UI div
 
   //box background
   const dchdLobbyDiv = document.createElement("div");
   dchdLobbyDiv.className = "lobby";
-  dchdLobbyDiv.innerHTML = '<div class="lobby">';
   dchdLobbyDiv.style.position = "absolute";
   dchdLobbyDiv.style.left = "0";
   dchdLobbyDiv.style.top = "0";
@@ -263,7 +301,6 @@ function inLobby(code) {
   //top bar
   const bar = document.createElement("div");
   bar.className = "bar";
-  bar.innerHTML = '<div class="bar">';
   bar.style.margin = "0";
   bar.style.padding = "0";
   bar.style.width = "100%";
@@ -296,7 +333,6 @@ function inLobby(code) {
   //rest of the screen
   const lobbyUi = document.createElement("div");
   lobbyUi.className = "lobbyUI";
-  lobbyUi.innerHTML = '<div class="lobbyUI">';
   lobbyUi.style.margin = "0";
   lobbyUi.style.padding = "20px 0";
   lobbyUi.style.boxSizing = "border-box";
@@ -319,46 +355,8 @@ function inLobby(code) {
 
   lobbyUi.appendChild(title);
 
-  //team1 div
-  const teamdiv = document.createElement("div");
-  teamdiv.className = "red-team";
-  teamdiv.innerHTML = '<div class="read-team">';
-  teamdiv.style.textAlign = "center";
+  teamLobbyUi("Red", lobbyUi);
 
-  lobbyUi.appendChild(teamdiv);
-
-  //team1 text
-  const teamtitle = document.createElement("h2");
-
-  teamtitle.textContent = "Red Team";
-  teamtitle.style.borderBottom = "2px solid white";
-  teamtitle.style.fontSize = "32px";
-  teamtitle.style.fontWeight = "normal";
-  teamtitle.style.padding = "0";
-  teamtitle.style.color = "white";
-  teamtitle.style.float = "left";
-  teamtitle.style.width = "15%";
-
-  teamdiv.appendChild(teamtitle);
-
-  //team1 join button
-  const dchdJ = document.createElement("button");
-  dchdJ.className = "button";
-  dchdJ.style.position = "relative";
-  dchdJ.style.margin = "8px 18px";
-  dchdJ.style.padding = "0";
-  dchdJ.style.backgroundColor = "#112052";
-  dchdJ.style.border = "none";
-  dchdJ.style.color = "white";
-  dchdJ.style.fontSize = "32px";
-  dchdJ.append(document.createTextNode("Join Team"));
-  dchdJ.addEventListener("click", () => {
-    //n.playUIClick();                        //custom sfx system needed
-    //deleteElementsByClass("lobby")
-    //playLobby()
-  });
-
-  teamdiv.appendChild(dchdJ);
 };
 
 
