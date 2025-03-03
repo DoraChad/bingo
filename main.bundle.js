@@ -264,7 +264,7 @@ function teamLobbyUi(color, div) {
   teamtitle.style.color = "white";
   teamtitle.style.float = "left";
   teamtitle.style.width = "60%";
-  teamtitle.style.margin = "50px";
+  teamtitle.style.marginTop = "50px";
 
   teamdiv.appendChild(teamtitle);
 
@@ -287,6 +287,16 @@ function teamLobbyUi(color, div) {
   });
 
   teamdiv.appendChild(dchdJ);
+
+
+  //players text
+  const teamplayers = document.createElement("p")
+
+  teamplayers.style.weight = "normal";
+  teamplayers.style.fontsize = "16px";
+  teamplayers.style.width = "100%";
+  teamplayers.style.color = "white";
+  teamplayers.textContent = "younfella0\ndorachad";
 
 };
 
