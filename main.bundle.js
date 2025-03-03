@@ -40,9 +40,9 @@ function playLobby() {
 
   //box background
   const dchdPopupDiv = document.createElement("div");
-  dchdPopupDiv.className = "lobby-popup";
-
   dchdPopupDiv.className = "popupBox";
+  dchdPopupDiv.innerHTML = '<div class="lobby-popup">';
+
   dchdPopupDiv.style.position = "absolute";
   dchdPopupDiv.style.left = `calc(50% - 250px)`;
   dchdPopupDiv.style.top = "40%";
@@ -59,6 +59,7 @@ function playLobby() {
   //top bar background
   const dchdPopupBoxTop = document.createElement("div");
   dchdPopupBoxTop.className = "top-box";
+  dchdPopupBoxTop.innerHTML = '<div class="top-box">';
 
   dchdPopupBoxTop.style.margin = "0";
   dchdPopupBoxTop.style.padding = "10px";
@@ -69,7 +70,6 @@ function playLobby() {
 
   //top bar text
   const dchdP = document.createElement("h2");
-  
   
   dchdP.textContent = "Bingo Rooms";
   dchdP.style.margin = "0";
@@ -85,6 +85,7 @@ function playLobby() {
   //center part background
   const dchdPopupBoxCenter = document.createElement("div");
   dchdPopupBoxCenter.className = "center-box";
+  dchdPopupBoxCenter.innerHTML = '<div class="center-box">';
 
   dchdPopupBoxCenter.style.margin = "0";
   dchdPopupBoxCenter.style.padding = "40px";
@@ -116,6 +117,7 @@ function playLobby() {
   //bottom part background
   const dchdPopupBoxBottom = document.createElement("div");
   dchdPopupBoxBottom.className = "bottom-box";
+  dchdPopupBoxBottom.innerHTML = '<div class="bottom-box">';
 
   dchdPopupBoxBottom.style.margin = "0";
   dchdPopupBoxBottom.style.padding = "10px";
@@ -188,6 +190,7 @@ function joinerror(message) {
   //box background
   const dchdPopupDiv = document.createElement("div");
   dchdPopupDiv.className = "error-popup";
+  dchdPopupDiv.innerHTML = '<div class="error-popup">';
 
   dchdPopupDiv.className = "popupBox";
   dchdPopupDiv.style.position = "absolute";
@@ -247,6 +250,7 @@ function inLobby(code) {
   //box background
   const dchdLobbyDiv = document.createElement("div");
   dchdLobbyDiv.className = "lobby";
+  dchdLobbyDiv.innerHTML = '<div class="lobby">';
   dchdLobbyDiv.style.position = "absolute";
   dchdLobbyDiv.style.left = "0";
   dchdLobbyDiv.style.top = "0";
@@ -259,6 +263,7 @@ function inLobby(code) {
   //top bar
   const bar = document.createElement("div");
   bar.className = "bar";
+  bar.innerHTML = '<div class="bar">';
   bar.style.margin = "0";
   bar.style.padding = "0";
   bar.style.width = "100%";
@@ -290,6 +295,8 @@ function inLobby(code) {
 
   //rest of the screen
   const lobbyUi = document.createElement("div");
+  lobbyUi.className = "lobbyUI";
+  lobbyUi.innerHTML = '<div class="lobbyUI">';
   lobbyUi.style.margin = "0";
   lobbyUi.style.padding = "20px 0";
   lobbyUi.style.boxSizing = "border-box";
@@ -315,6 +322,7 @@ function inLobby(code) {
   //team1 div
   const teamdiv = document.createElement("div");
   teamdiv.className = "red-team";
+  teamdiv.innerHTML = '<div class="read-team">';
   teamdiv.style.textAlign = "center";
 
   lobbyUi.appendChild(teamdiv);
