@@ -365,7 +365,6 @@ function inLobby(code) {
   ready.style.float = "right";
   ready.append(document.createTextNode("Ready"));
   ready.addEventListener("click", () => {
-    ready.innerHTML = '<img class="button-icon" src="images/apply.svg"> ';
     if (ready.style.backgroundColor == "rgb(17, 32, 82)") {
       ready.style.backgroundColor = "rgb(82, 17, 17)";
       ready.textContent = "Unready";
@@ -374,6 +373,7 @@ function inLobby(code) {
       ready.textContent = "Ready";  // Change the button text back to "Ready"
     };
 
+    ready.innerHTML = '<img class="button-icon" src="images/apply.svg"> ';
 
     //n.playUIClick();                        //custom sfx system needed
   });
