@@ -342,6 +342,8 @@ function inLobby(code) {
     //deleteElementsByClass("lobby")
     //playLobby()
   });
+
+  teamtitle.appendChild(dchdJ);
 };
 
 
