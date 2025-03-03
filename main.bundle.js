@@ -248,7 +248,7 @@ function teamLobbyUi(color, div) {
   teamdiv.style.flexDirection = "column"
   teamdiv.style.alignItems = "center";
   teamdiv.style.height = "100vh";
-  teamdiv.style.width = "25%";
+  teamdiv.style.width = "15%";
 
 
   div.appendChild(teamdiv);
