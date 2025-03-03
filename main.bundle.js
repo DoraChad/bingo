@@ -171,7 +171,7 @@ function playLobby() {
 
     //joinerror("Room does not exist");                //if error upon server response
 
-    inLobby();             //if server exists + allowed to join
+    inLobby(bingoRoomCode);             //if server exists + allowed to join
 
   });
 
@@ -272,8 +272,8 @@ function inLobby(code) {
   dchdC.className = "button";
   dchdC.innerHTML = '<img class="button-icon" src="images/back.svg"> ';
   dchdC.style.position = "relative";
-  dchdC.style.margin = "0";
-  dchdC.style.padding = "8px 18px";
+  dchdC.style.margin = "8px 18px";
+  dchdC.style.padding = "0";
   dchdC.style.backgroundColor = "#112052";
   dchdC.style.border = "none";
   dchdC.style.color = "white";
@@ -302,7 +302,7 @@ function inLobby(code) {
   //room data
   const title = document.createElement("h2");
 
-  title.textContent = `Room: ${code}`
+  title.textContent = `Room Code: ${code}`
   title.style.margin = "0.5em 0.75em";
   title.style.padding = "0";
   title.style.color = "white";
@@ -312,6 +312,36 @@ function inLobby(code) {
 
   lobbyUi.appendChild(title);
 
+  //team1
+  const teamtitle = document.createElement("h2");
+
+  teamtitle.textContent = "Red Team";
+  teamtitle.style.borderBottom = "2px solid white";
+  teamtitle.style.fontSize = "32px";
+  teamtitle.style.fontWeight = "normal";
+  teamtitle.style.padding = "0";
+  teamtitle.style.color = "white";
+  teamtitle.style.float = "left";
+  teamtitle.style.width = "15%";
+
+  lobbyUi.appendChild(teamtitle);
+
+  //team1 join button
+  const dchdJ = document.createElement("button");
+  dchdJ.className = "button";
+  dchdJ.style.position = "relative";
+  dchdJ.style.margin = "8px 18px";
+  dchdJ.style.padding = "0";
+  dchdJ.style.backgroundColor = "#112052";
+  dchdJ.style.border = "none";
+  dchdJ.style.color = "white";
+  dchdJ.style.fontSize = "32px";
+  dchdJ.append(document.createTextNode("Join Team"));
+  dchdJ.addEventListener("click", () => {
+    //n.playUIClick();                        //custom sfx system needed
+    //deleteElementsByClass("lobby")
+    //playLobby()
+  });
 };
 
 
