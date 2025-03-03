@@ -251,14 +251,15 @@ function teamLobbyUi(color, div) {
   //team1 text
   const teamtitle = document.createElement("h2");
 
-  teamtitle.textContent = `${color} Team"`
+  teamtitle.textContent = `${color} Team`
   teamtitle.style.borderBottom = "2px solid white";
   teamtitle.style.fontSize = "32px";
   teamtitle.style.fontWeight = "normal";
-  teamtitle.style.padding = "0";
+  teamtitle.style.padding = "10px";
   teamtitle.style.color = "white";
   teamtitle.style.float = "left";
   teamtitle.style.width = "15%";
+  teamtitle.style.margin = "50px";
 
   div.appendChild(teamtitle);
 
