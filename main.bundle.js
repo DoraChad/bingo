@@ -19,6 +19,7 @@ function socketconnect(socketurl) {
   }
 }); */
 
+
 function toggleInnerVisibility(className, show, excludeSelector) {
   document.querySelectorAll(`.${className} > *:not(${excludeSelector})`).forEach(el => {
     el.style.visibility = show ? "visible" : "hidden";
@@ -346,6 +347,8 @@ function inLobby(code) {
     //n.playUIClick();                        //custom sfx system needed
     deleteElementsByClass("lobby")
     playLobby()
+    toggleInnerVisibility("menu", true);
+    toggleInnerVisibility("menu", false, ".logo");
   });
 
 
