@@ -248,7 +248,7 @@ function teamLobbyUi(color, div) {
   teamdiv.style.flexDirection = "column"
   teamdiv.style.alignItems = "center";
   teamdiv.style.height = "100vh";
-  teamdiv.style.width = "15%";
+  teamdiv.style.width = "25%";
 
 
   div.appendChild(teamdiv);
@@ -263,7 +263,7 @@ function teamLobbyUi(color, div) {
   teamtitle.style.padding = "10px";
   teamtitle.style.color = "white";
   teamtitle.style.float = "left";
-  teamtitle.style.width = "75%";
+  teamtitle.style.width = "60%";
   teamtitle.style.margin = "50px";
 
   teamdiv.appendChild(teamtitle);
