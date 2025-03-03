@@ -167,9 +167,11 @@ function playLobby() {
 
     //socket.emit("joinRoom", bingoRoomCode);
       
-    //toggleInnerVisibility("menu", false);
+    toggleInnerVisibility("menu", false);
 
-    joinerror("Room does not exist");
+    //joinerror("Room does not exist");                //if error upon server response
+
+    inLobby();             //if server exists + allowed to join
 
   });
 
@@ -236,6 +238,79 @@ function joinerror(message) {
   });
 
   dchdPopupDiv.appendChild(dchdY);
+
+};
+
+function inLobby(code) {
+  const dchdUIDiv = document.getElementById("ui");   //get the pre-existing UI div
+
+  //box background
+  const dchdLobbyDiv = document.createElement("div");
+  dchdLobbyDiv.className = "lobby";
+  dchdLobbyDiv.style.position = "absolute";
+  dchdLobbyDiv.style.left = "0";
+  dchdLobbyDiv.style.top = "0";
+  dchdLobbyDiv.style.width = "100%";
+  dchdLobbyDiv.style.height = "100%";
+  dchdLobbyDiv.style.textAlign = "center";
+
+  dchdUIDiv.appendChild(dchdLobbyDiv);
+
+  //top bar
+  const bar = document.createElement("div");
+  bar.className = "bar";
+  bar.style.margin = "0";
+  bar.style.padding = "0";
+  bar.style.width = "100%";
+  bar.style.backgroundColor = "#28346a";
+  bar.style.textAlign = "left";
+
+  dchdLobbyDiv.appendChild(bar);
+
+  //backbutton
+  const dchdC = document.createElement("button");
+  dchdC.className = "button";
+  dchdC.innerHTML = '<img class="button-icon" src="images/back.svg"> ';
+  dchdC.style.position = "relative";
+  dchdC.style.margin = "0";
+  dchdC.style.padding = "8px 18px";
+  dchdC.style.backgroundColor = "#112052";
+  dchdC.style.border = "none";
+  dchdC.style.color = "white";
+  dchdC.style.fontSize = "32px";
+  dchdC.append(document.createTextNode("Back"));
+  dchdC.addEventListener("click", () => {
+    //n.playUIClick();                        //custom sfx system needed
+    deleteElementsByClass("lobby")
+    playLobby()
+  });
+
+
+  bar.appendChild(dchdC);
+
+  //rest of the screen
+  const lobbyUi = document.createElement("div");
+  lobbyUi.style.margin = "0";
+  lobbyUi.style.padding = "20px 0";
+  lobbyUi.style.boxSizing = "border-box";
+  lobbyUi.style.width = "100%";
+  lobbyUi.style.height = "calc(100%-64px)";
+  lobbyUi.style.overflowY = "auto";
+
+  dchdLobbyDiv.appendChild(lobbyUi);
+
+  //room data
+  const title = document.createElement("h2");
+
+  title.textContent = `Room: ${code}`
+  title.style.margin = "0.5em 0.75em";
+  title.style.padding = "0";
+  title.style.color = "white";
+  title.style.fontSize = "50px";
+  title.style.fontWeight = "normal";
+  title.style.borderBottom = "2px solid white";
+
+  lobbyUi.appendChild(title);
 
 };
 
