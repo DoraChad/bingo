@@ -42788,12 +42788,16 @@ function inLobby(code) {
                   }
                 });
 
+
                 toggleInnerVisibility("menu", false, ".logo");
                 //YC(this, kC, "m", HC).call(this);         //clears screen (ui elements)
                 //YC(this, kC, "m", GC).call(this);          //gets rid of logo (and probably other things as well)
                 //YC(this, RC, "f").show();               //shows next ui (track select, import, ect...)
-
-                playLobby();
+                socket.on('connect', () => {
+                  console.log("Connected to server");
+                  playLobby();
+              });
+                
             });
           const T = document.createElement("p");
           (T.textContent = t.get("Play")),
