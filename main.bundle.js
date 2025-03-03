@@ -248,6 +248,7 @@ function teamLobbyUi(color, div) {
   teamdiv.style.flexDirection = "column"
   teamdiv.style.alignItems = "center";
   teamdiv.style.height = "100vh";
+  teamdiv.style.width = "25%";
 
 
   div.appendChild(teamdiv);
@@ -277,6 +278,7 @@ function teamLobbyUi(color, div) {
   dchdJ.style.border = "none";
   dchdJ.style.color = "white";
   dchdJ.style.fontSize = "32px";
+  dchdJ.style.width = "55%";
   dchdJ.append(document.createTextNode("Join Team"));
   dchdJ.addEventListener("click", () => {
     //n.playUIClick();                        //custom sfx system needed
@@ -364,6 +366,7 @@ function inLobby(code) {
   teamsalign.style.alignItems = "center";
   teamsalign.style.display = "flex";
   teamsalign.style.width = "100%";
+  teamsalign.style.justifyContent = "center";
 
   lobbyUi.appendChild(teamsalign);
 
