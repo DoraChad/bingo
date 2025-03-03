@@ -138,7 +138,7 @@ function playLobby() {
   dchdC.append(document.createTextNode("Back"));
   dchdC.addEventListener("click", () => {
     //n.playUIClick();                        //custom sfx system needed
-    deleteElementsByClass("lobby-popup")
+    deleteElementsByClass("popupBox")
     toggleInnerVisibility("menu", true, ".logo");
   });
 
