@@ -278,7 +278,7 @@ function teamLobbyUi(color, div) {
   dchdJ.style.border = "none";
   dchdJ.style.color = "white";
   dchdJ.style.fontSize = "32px";
-  dchdJ.style.width = "55%";
+  dchdJ.style.width = "40%";
   dchdJ.append(document.createTextNode("Join Team"));
   dchdJ.addEventListener("click", () => {
     //n.playUIClick();                        //custom sfx system needed
