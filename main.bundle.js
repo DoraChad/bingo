@@ -138,7 +138,7 @@ function playLobby() {
   dchdC.append(document.createTextNode("Back"));
   dchdC.addEventListener("click", () => {
     //n.playUIClick();                        //custom sfx system needed
-    deleteElementsByClass("bingo-lobby-code")
+    deleteElementsByClass("lobby-popup")
     toggleInnerVisibility("menu", true, ".logo");
   });
 
