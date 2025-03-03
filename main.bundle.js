@@ -216,9 +216,15 @@ function joinerror(message) {
   dchdPopupDiv.appendChild(dchdErrorText);
 
   const dchdErrorButton = document.createElement("button")
+  dchdErrorButton.style.position = "relative";
   dchdErrorButton.className = "confirm-button";
-
-  dchdErrorButton.textContent = "Ok"
+  dchdErrorButton.style.backgroundColor = "#112052";
+  dchdErrorButton.style.margin = "0";
+  dchdErrorButton.style.padding = "8px";
+  dchdErrorButton.style.color = "white";
+  dchdErrorButton.style.border = "none";
+  dchdErrorButton.style.fontSize = "32px";
+  dchdErrorButton.textContent = "Ok";
   dchdErrorButton.addEventListener("click", () => {
     //n.playUIClick();                                      //custom sfx system needed
   
