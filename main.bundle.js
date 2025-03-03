@@ -312,7 +312,14 @@ function inLobby(code) {
 
   lobbyUi.appendChild(title);
 
-  //team1
+  //team1 div
+  const teamdiv = document.createElement("div");
+  teamdiv.className = "red-team";
+  teamdiv.style.textAlign = "center";
+
+  lobbyUi.appendChild(teamdiv);
+
+  //team1 text
   const teamtitle = document.createElement("h2");
 
   teamtitle.textContent = "Red Team";
@@ -324,7 +331,7 @@ function inLobby(code) {
   teamtitle.style.float = "left";
   teamtitle.style.width = "15%";
 
-  lobbyUi.appendChild(teamtitle);
+  teamdiv.appendChild(teamtitle);
 
   //team1 join button
   const dchdJ = document.createElement("button");
@@ -343,7 +350,7 @@ function inLobby(code) {
     //playLobby()
   });
 
-  teamtitle.appendChild(dchdJ);
+  teamdiv.appendChild(dchdJ);
 };
 
 
