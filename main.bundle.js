@@ -351,6 +351,32 @@ function inLobby(code) {
 
   bar.appendChild(dchdC);
 
+  //readybutton
+  const ready = document.createElement("button");
+  ready.className = "button";
+  ready.innerHTML = '<img class="button-icon" src="images/apply.svg"> ';
+  ready.style.position = "relative";
+  ready.style.margin = "10px";
+  ready.style.padding = "8px 18px";
+  ready.style.backgroundColor = "#112052";
+  ready.style.border = "none";
+  ready.style.color = "white";
+  ready.style.fontSize = "32px";
+  ready.style.floag = "right";
+  ready.append(document.createTextNode("Ready"));
+  ready.addEventListener("click", () => {
+    if (ready.style.backgroundColor == "#112052") {
+      ready.style.backgroundColor = "rgb(82, 17, 17)";
+      ready.textContent = "Unready";
+    } else {
+      ready.style.backgroundColor = "#112052";  // Reset background color
+      ready.textContent = "Ready";  // Change the button text back to "Ready"
+    };
+
+
+    //n.playUIClick();                        //custom sfx system needed
+  });
+
   //rest of the screen
   const lobbyUi = document.createElement("div");
   lobbyUi.className = "lobbyUI";
