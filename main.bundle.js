@@ -7,17 +7,6 @@ function socketconnect(socketurl) {
 
 
 
-//socketconnect('DoraChadSS.pythonanywhere.com');
-
-/* socket.on('joinData', function(response) {
-  console.log(response); // This will log the server's response
-  // Handle response from server
-  if (response.status === 'Connected') {
-      // Proceed with joining the room
-  } else {
-      // Handle case where room does not exist (CFE)
-  }
-}); */
 
 
 function toggleInnerVisibility(className, show, excludeSelector) {
@@ -42773,7 +42762,31 @@ function inLobby(code) {
               n.playUIClick(),
                 //when clicked
 
-                //socketconnect('DoraChadSS.pythonanywhere.com');    //conncet to socketio server
+                
+                socketconnect('http://127.0.0.1:5000/');
+
+
+                socket.on('connect_error', function(error) {
+                  joinerror("Connection error");
+                  return;
+                  // Display an error message to the user or retry connection
+                });
+              
+                socket.on('connect_failed', function() {
+                  joinerror("Connection failed.");
+                  return;
+                    // Handle connection failure, e.g., show a retry button
+                });
+
+                socket.on('joinData', function(response) {
+                  console.log(response); // This will log the server's response
+                  // Handle response from server
+                  if (response.status === 'Connected') {
+                      // Proceed with joining the room
+                  } else {
+                      // Handle case where room does not exist (CFE)
+                  }
+                });
 
                 toggleInnerVisibility("menu", false, ".logo");
                 //YC(this, kC, "m", HC).call(this);         //clears screen (ui elements)
