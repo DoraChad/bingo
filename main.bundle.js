@@ -244,7 +244,12 @@ function teamLobbyUi(color, div) {
   //team1 div
   const teamdiv = document.createElement("div");
   teamdiv.className = `${color}-team`;
-  teamdiv.style.textAlign = "center";
+  teamdiv.style.display = "flex";
+  teamdiv.style.flexDirection = "column"
+  teamdiv.style.alignItems = "center";
+  teamdiv.style.justifyContent = "center";
+  teamdiv.style.height = "100vh";
+
 
   div.appendChild(teamdiv);
 
@@ -261,14 +266,14 @@ function teamLobbyUi(color, div) {
   teamtitle.style.width = "15%";
   teamtitle.style.margin = "50px";
 
-  div.appendChild(teamtitle);
+  teamdiv.appendChild(teamtitle);
 
   //team1 join button
   const dchdJ = document.createElement("button");
   dchdJ.className = "button";
   dchdJ.style.position = "relative";
   dchdJ.style.margin = "8px 18px";
-  dchdJ.style.padding = "0";
+  dchdJ.style.padding = "15px";
   dchdJ.style.backgroundColor = "#112052";
   dchdJ.style.border = "none";
   dchdJ.style.color = "white";
@@ -280,7 +285,7 @@ function teamLobbyUi(color, div) {
     //playLobby()
   });
 
-  div.appendChild(dchdJ);
+  teamdiv.appendChild(dchdJ);
 
 };
 
@@ -315,8 +320,8 @@ function inLobby(code) {
   dchdC.className = "button";
   dchdC.innerHTML = '<img class="button-icon" src="images/back.svg"> ';
   dchdC.style.position = "relative";
-  dchdC.style.margin = "8px 18px";
-  dchdC.style.padding = "0";
+  dchdC.style.margin = "0";
+  dchdC.style.padding = "8px 18px";
   dchdC.style.backgroundColor = "#112052";
   dchdC.style.border = "none";
   dchdC.style.color = "white";
@@ -356,7 +361,16 @@ function inLobby(code) {
 
   lobbyUi.appendChild(title);
 
-  teamLobbyUi("Red", lobbyUi);
+  const teamsalign = document.createElement("div");
+  teamsalign.style.alignItems = "center";
+  teamsalign.style.display = "flex";
+  teamsalign.style.width = "100%";
+
+  lobbyUi.appendChild(teamsalign);
+
+  teamLobbyUi("Red", teamsalign);
+  teamLobbyUi("Green", teamsalign);
+
 
 };
 
