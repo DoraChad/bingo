@@ -362,10 +362,10 @@ function inLobby(code) {
   ready.style.border = "none";
   ready.style.color = "white";
   ready.style.fontSize = "32px";
-  ready.style.floag = "right";
+  ready.style.float = "right";
   ready.append(document.createTextNode("Ready"));
   ready.addEventListener("click", () => {
-    if (ready.style.backgroundColor == "#112052") {
+    if (ready.style.backgroundColor == "rgb(17, 32, 82)") {
       ready.style.backgroundColor = "rgb(82, 17, 17)";
       ready.textContent = "Unready";
     } else {
