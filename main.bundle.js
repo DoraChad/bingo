@@ -297,6 +297,7 @@ function teamLobbyUi(color, div) {
   teamplayers.style.width = "100%";
   teamplayers.style.color = "white";
   teamplayers.textContent = "younfella0\ndorachad";
+  teamplayers.style.whiteSpace = "pre-line";
 
   teamdiv.appendChild(teamplayers);
 
