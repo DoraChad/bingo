@@ -377,6 +377,9 @@ function inLobby(code) {
     //n.playUIClick();                        //custom sfx system needed
   });
 
+
+  bar.appendChild(ready);
+
   //rest of the screen
   const lobbyUi = document.createElement("div");
   lobbyUi.className = "lobbyUI";
