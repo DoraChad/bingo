@@ -215,25 +215,34 @@ function joinerror(message) {
 
   dchdPopupDiv.appendChild(dchdErrorText);
 
-  const dchdErrorButton = document.createElement("button")
-  dchdErrorButton.style.position = "relative";
-  dchdErrorButton.className = "confirm-button";
-  dchdErrorButton.style.backgroundColor = "#112052";
-  dchdErrorButton.style.margin = "0";
-  dchdErrorButton.style.padding = "8px";
-  dchdErrorButton.style.color = "white";
-  dchdErrorButton.style.border = "none";
-  dchdErrorButton.style.fontSize = "32px";
-  dchdErrorButton.textContent = "Ok";
-  dchdErrorButton.addEventListener("click", () => {
-    //n.playUIClick();                                      //custom sfx system needed
-  
-    deleteElementsByClass("error-popup");
+  const dchdY = document.createElement("button");
+  dchdY.className = "button";
+  dchdY.innerHTML = '<img class="button-icon" src="images/apply.svg"> ';
+  dchdY.style.position = "relative";
+  dchdY.style.margin = "0";
+  dchdY.style.padding = "8px 18px";
+  dchdY.style.backgroundColor = "#112052";
+  dchdY.style.border = "none";
+  dchdY.style.color = "white";
+  dchdY.style.fontSize = "32px";
+  dchdY.style.float = "right";
+  dchdY.append(document.createTextNode("Ok"));
+  dchdY.addEventListener("click", () => {
+
+    //n.playUIClick();                                    //custom sfx system needed
+    
+    const bingoRoomCode = dchdPopupBoxInput.value;
+    deleteElementsByClass("popupBox");
+
+    //socket.emit("joinRoom", bingoRoomCode);
       
-    playLobby()
+    //toggleInnerVisibility("menu", false);
+
+    joinerror("Room does not exist");
+
   });
 
-  dchdPopupDiv.appendChild(dchdErrorButton);
+  dchdPopupDiv.appendChild(dchdY);
 
 };
 
