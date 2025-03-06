@@ -219,7 +219,7 @@ function joinerror(message, okfunction = () => {}) {
   dchdY.addEventListener("click", () => {
 
     //n.playUIClick();                                    //custom sfx system needed
-    deleteElementsByClass("error-popup");
+    deleteElementsByClass("popupBox");
 
     okfunction();
 
