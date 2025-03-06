@@ -1,4 +1,5 @@
 let socket;
+let playerName;
 
 function socketconnect(socketurl) {
     socket = io.connect(socketurl); 
@@ -20,6 +21,23 @@ function deleteElementsByClass(className) {
       el.remove(); // Removes each element from the DOM
   });
 };
+
+
+function getPlayerData() {
+  let playerslot = 0;
+
+  if (localStorage.getItem("polytrack_v3_user_slot") !== null) {
+    playerslot = Number(localStorage.getItem("polytrack_v3_user_slot"));
+  }
+
+  playerName = JSON.parse(localStorage.getItem(`polytrack_v3_user_${playerslot}`) || "{}").nickname || "Guest";
+  console.log(playername);
+};
+
+function getPlayerData() {
+
+};
+
 
 function playLobby() {
 
