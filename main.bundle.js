@@ -7,7 +7,7 @@ function socketconnect(socketurl) {
 };
 
 
-
+let bingoRoomCode
 
 
 function toggleInnerVisibility(className, show, excludeSelector) {
@@ -31,12 +31,14 @@ function getPlayerData() {
   }
 
   playerName = JSON.parse(localStorage.getItem(`polytrack_v3_user_${playerslot}`) || "{}").nickname || "Guest";
-  console.log(playername);
+  console.log(playerName);
 };
 
 
 
 function playLobby() {
+
+  getPlayerData();
 
   //organizational div
 
@@ -165,7 +167,7 @@ function playLobby() {
 
     //n.playUIClick();                                    //custom sfx system needed
     
-    const bingoRoomCode = dchdPopupBoxInput.value;
+    bingoRoomCode = dchdPopupBoxInput.value;
     deleteElementsByClass("popupBox");
 
     socket.emit("joinRoom", bingoRoomCode);
@@ -174,7 +176,7 @@ function playLobby() {
 
     //joinerror("Room does not exist", playLobby);                //if error upon server response
 
-    inLobby(bingoRoomCode);             //if server exists + allowed to join
+    //inLobby(bingoRoomCode);             //if server exists + allowed to join
 
   });
 
@@ -42800,9 +42802,11 @@ function inLobby(code) {
                   console.log(response); // This will log the server's response
                   // Handle response from server
                   if (response.status === 'Connected') {
-                      // Proceed with joining the room
+                      inLobby(bingoRoomCode);
                   } else {
                       // Handle case where room does not exist (CFE)
+                      deleteElementsByClass("popupBox")
+                      toggleInnerVisibility("menu", true, ".logo");
                   }
                 });
 
