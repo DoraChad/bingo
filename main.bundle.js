@@ -171,8 +171,7 @@ function playLobby() {
     deleteElementsByClass("popupBox");
 
     socket.emit("joinRoom", bingoRoomCode);
-      
-    toggleInnerVisibility("menu", false);
+    
 
     //joinerror("Room does not exist", playLobby);                //if error upon server response
 
@@ -42802,11 +42801,12 @@ function inLobby(code) {
                   console.log(response); // This will log the server's response
                   // Handle response from server
                   if (response.status === 'Connected') {
+                      toggleInnerVisibility("menu", false);
                       inLobby(bingoRoomCode);
                   } else {
                       // Handle case where room does not exist (CFE)
                       deleteElementsByClass("popupBox")
-                      joinerror("Room Not Found", () => toggleInnerVisibility("menu", true));
+                      joinerror("Room Not Found", () => playLobby());
                       
                   }
                 });
