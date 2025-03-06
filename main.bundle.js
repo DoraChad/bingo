@@ -157,7 +157,7 @@ function playLobby() {
       
     toggleInnerVisibility("menu", false);
 
-    //joinerror("Room does not exist");                //if error upon server response
+    //joinerror("Room does not exist", playLobby);                //if error upon server response
 
     inLobby(bingoRoomCode);             //if server exists + allowed to join
 
@@ -170,7 +170,7 @@ function playLobby() {
 };
 
 
-function joinerror(message) {
+function joinerror(message, okfunction = () => {}) {
   const dchdUIDiv = document.getElementById("ui");   //get the pre-existing UI div
 
   //box background
@@ -221,7 +221,7 @@ function joinerror(message) {
     //n.playUIClick();                                    //custom sfx system needed
     deleteElementsByClass("error-popup");
 
-    playLobby();
+    okfunction();
 
   });
 
@@ -42767,14 +42767,14 @@ function inLobby(code) {
 
 
                 socket.on('connect_error', function(error) {
-                  joinerror("Connection error");
+                  joinerror("Connection error", () => toggleInnerVisibility("menu", true, ".logo"));
                   socket.disconnect();
                   return;
                   // Display an error message to the user or retry connection
                 });
               
                 socket.on('connect_failed', function() {
-                  joinerror("Connection failed.");
+                  joinerror("Connection failed.", () => toggleInnerVisibility("menu", true, ".logo"));
                   socket.disconnect();
                   return;
                     // Handle connection failure, e.g., show a retry button
