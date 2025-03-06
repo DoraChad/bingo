@@ -153,7 +153,7 @@ function playLobby() {
     const bingoRoomCode = dchdPopupBoxInput.value;
     deleteElementsByClass("popupBox");
 
-    //socket.emit("joinRoom", bingoRoomCode);
+    socket.emit("joinRoom", bingoRoomCode);
       
     toggleInnerVisibility("menu", false);
 
@@ -334,10 +334,11 @@ function inLobby(code) {
   dchdC.append(document.createTextNode("Back"));
   dchdC.addEventListener("click", () => {
     //n.playUIClick();                        //custom sfx system needed
-    deleteElementsByClass("lobby")
-    playLobby()
-    toggleInnerVisibility("menu", true);
-    toggleInnerVisibility("menu", false, ".logo");
+    socket.disconnect();     //disconect from socket
+    deleteElementsByClass("lobby")        //remove lobby UI
+    playLobby()        //reload the join room popup
+    toggleInnerVisibility("menu", true);         //load the main menu
+    toggleInnerVisibility("menu", false, ".logo");       //hide everything but logo in main menu
   });
 
 
