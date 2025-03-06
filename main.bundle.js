@@ -42806,7 +42806,8 @@ function inLobby(code) {
                   } else {
                       // Handle case where room does not exist (CFE)
                       deleteElementsByClass("popupBox")
-                      toggleInnerVisibility("menu", true, ".logo");
+                      joinerror("Room Not Found", () => toggleInnerVisibility("menu", true));
+                      
                   }
                 });
 
