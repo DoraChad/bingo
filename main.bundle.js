@@ -34,9 +34,6 @@ function getPlayerData() {
   console.log(playername);
 };
 
-function getPlayerData() {
-
-};
 
 
 function playLobby() {
