@@ -170,7 +170,11 @@ function playLobby() {
     bingoRoomCode = dchdPopupBoxInput.value;
     deleteElementsByClass("popupBox");
 
-    socket.emit("joinRoom", bingoRoomCode);
+
+    socket.emit("joinRoom", {
+      room: bingoRoomCode,
+      user: playerName
+    });
     
 
     //joinerror("Room does not exist", playLobby);                //if error upon server response
@@ -42857,7 +42861,7 @@ function inLobby(code) {
           const C = document.createElement("a");
           (C.href = "https://www.kodub.com"),
             (C.target = "_blank"),
-            (C.textContent = "kodub.com + DoraChad + Community <3 - " + t.get("Version") + " " + _C.rE),
+            (C.textContent = "kodub.com - " + t.get("Version") + " " + _C.rE),
             YC(this, CC, "f").appendChild(C);
           const P = document.createElement("a");
           (P.href = "https://opengameart.org/content/sci-fi-theme-1"),
