@@ -7,7 +7,8 @@ function socketconnect(socketurl) {
 };
 
 
-let bingoRoomCode
+let bingoRoomCode;
+const allBingoPlayers = '';
 
 
 function toggleInnerVisibility(className, show, excludeSelector) {
@@ -191,6 +192,10 @@ function playLobby() {
 
 
 function joinerror(message, okfunction = () => {}) {
+  if (document.getElementById("lobby")) {
+    deleteElementsByClass("lobby");
+  };
+
   const dchdUIDiv = document.getElementById("ui");   //get the pre-existing UI div
 
   //box background
@@ -42805,12 +42810,24 @@ function inLobby(code) {
                   console.log(response); // This will log the server's response
                   // Handle response from server
                   if (response.status === 'Connected') {
-                      toggleInnerVisibility("menu", false);
-                      inLobby(bingoRoomCode);
+                    toggleInnerVisibility("menu", false);
+                    inLobby(bingoRoomCode);
+
+                    let bingoPlayers = response.players;
+                    let bingoPlayersLength = bingoPlayers.length;
+                    allBingoPlayers = '';
+
+                    for (var i = 0; i < arrayLength; i++) {
+                      allBingoPlayers = allBingoPlayers.concat("\n", bingoPlayers[i]);
+                      console.log(allBingoPlayers);
+                        //Do something
+                    }
+                  } else if (response.status === 'Update') {
+                    console.log(response.players)
                   } else {
                       // Handle case where room does not exist (CFE)
-                      deleteElementsByClass("popupBox")
-                      joinerror("Room Not Found", () => playLobby());
+                    deleteElementsByClass("popupBox")
+                    joinerror("Room Not Found", () => playLobby());
                       
                   }
                 });
