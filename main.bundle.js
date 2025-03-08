@@ -192,6 +192,7 @@ function playLobby() {
 
 
 function joinerror(message, okfunction = () => {}) {
+  console.log(document.getElementById("lobby"));
   if (document.getElementById("lobby")) {
     deleteElementsByClass("lobby");
   };
@@ -42818,7 +42819,7 @@ function inLobby(code) {
                     allBingoPlayers = '';
 
                     for (var i = 0; i < bingoPlayersLength; i++) {
-                      allBingoPlayers = allBingoPlayers.concat("\n", bingoPlayers[i]);
+                      allBingoPlayers = allBingoPlayers.concat("\n", bingoPlayers[i][0]);
                       console.log(allBingoPlayers);
                         //Do something
                     }
