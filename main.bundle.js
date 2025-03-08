@@ -192,8 +192,8 @@ function playLobby() {
 
 
 function joinerror(message, okfunction = () => {}) {
-  console.log(document.getElementById("lobby"));
-  if (document.getElementById("lobby")) {
+  console.log(document.getElementsByClassName('lobby'));
+  if (document.getElementsByClassName('lobby')) {
     deleteElementsByClass("lobby");
   };
 
