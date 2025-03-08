@@ -8,7 +8,7 @@ function socketconnect(socketurl) {
 
 
 let bingoRoomCode;
-const allBingoPlayers = '';
+let allBingoPlayers = '';
 
 
 function toggleInnerVisibility(className, show, excludeSelector) {
