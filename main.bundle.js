@@ -42817,7 +42817,7 @@ function inLobby(code) {
                     let bingoPlayersLength = bingoPlayers.length;
                     allBingoPlayers = '';
 
-                    for (var i = 0; i < arrayLength; i++) {
+                    for (var i = 0; i < bingoPlayersLength; i++) {
                       allBingoPlayers = allBingoPlayers.concat("\n", bingoPlayers[i]);
                       console.log(allBingoPlayers);
                         //Do something
