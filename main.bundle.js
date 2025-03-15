@@ -42837,11 +42837,17 @@ function inLobby(code) {
                         }
                     }
                     
+                    // Convert lists to strings with line breaks
+                    let redPlayersText = redPlayers.join("\n");
+                    let bluePlayersText = bluePlayers.join("\n");
+                    let greenPlayersText = greenPlayers.join("\n");
+                    let yellowPlayersText = yellowPlayers.join("\n");
+
                     // Log results
-                    console.log("Red Players:", redPlayers);
-                    console.log("Blue Players:", bluePlayers);
-                    console.log("Green Players:", greenPlayers);
-                    console.log("Yellow Players:", yellowPlayers);
+                    console.log("Red Players:\n", redPlayersText);
+                    console.log("Blue Players:\n", bluePlayersText);
+                    console.log("Green Players:\n", greenPlayersText);
+                    console.log("Yellow Players:\n", yellowPlayersText);
                     
                   } else if (response.status === 'Update') {
                     console.log(response.players)
