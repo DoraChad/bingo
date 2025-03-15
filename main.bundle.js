@@ -192,7 +192,6 @@ function playLobby() {
 
 
 function joinerror(message, okfunction = () => {}) {
-  console.log(document.getElementsByClassName('lobby'));
   if (document.getElementsByClassName('lobby')) {
     deleteElementsByClass("lobby");
   };
@@ -42813,16 +42812,37 @@ function inLobby(code) {
                   if (response.status === 'Connected') {
                     toggleInnerVisibility("menu", false);
                     inLobby(bingoRoomCode);
-
                     let bingoPlayers = response.players;
                     let bingoPlayersLength = bingoPlayers.length;
-                    allBingoPlayers = '';
-
+                    
+                    // Create empty arrays for each color
+                    let redPlayers = [];
+                    let bluePlayers = [];
+                    let greenPlayers = [];
+                    let yellowPlayers = [];
+                    
                     for (var i = 0; i < bingoPlayersLength; i++) {
-                      allBingoPlayers = allBingoPlayers.concat("\n", bingoPlayers[i][0]);
-                      console.log(allBingoPlayers);
-                        //Do something
+                        let playerName = bingoPlayers[i][0]; // Player's name
+                        let playerColor = bingoPlayers[i][1]; // Player's color
+                    
+                        // Sort players into their respective color groups
+                        if (playerColor === "red") {
+                            redPlayers.push(playerName);
+                        } else if (playerColor === "blue") {
+                            bluePlayers.push(playerName);
+                        } else if (playerColor === "green") {
+                            greenPlayers.push(playerName);
+                        } else if (playerColor === "yellow") {
+                            yellowPlayers.push(playerName);
+                        }
                     }
+                    
+                    // Log results
+                    console.log("Red Players:", redPlayers);
+                    console.log("Blue Players:", bluePlayers);
+                    console.log("Green Players:", greenPlayers);
+                    console.log("Yellow Players:", yellowPlayers);
+                    
                   } else if (response.status === 'Update') {
                     console.log(response.players)
                   } else {
